@@ -4,12 +4,12 @@
     $password = "";
     $db_name ="test";
 
-    try{
-        $con = new PDO("mysql:host=$sname; dbname=$db_name", $uname, $password);
-        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Success";
+    $con = new mysqli($sname, $uname, $password, $db_name);
+   
+    if(!$con){
+        echo "Connection Failed";
     }
-    catch (PDOException $e){
-        echo "Error in connection" . $e->getMessage();
+    else{
+        echo "Connection Success";
     }
 ?>
