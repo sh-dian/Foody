@@ -4,12 +4,9 @@
     $password = "";
     $db_name ="test";
 
-    $con = new mysqli($sname, $uname, $password, $db_name);
+    $con = mysqli_connect($sname, $uname, $password, $db_name);
    
     if(!$con){
         echo "Connection Failed";
-    }
-    else{
-        echo "Connection Success";
     }
 ?>

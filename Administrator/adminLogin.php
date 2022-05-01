@@ -1,3 +1,26 @@
+<?php
+    include_once 'db.php';
+
+    if(isset($_POST['username'])){
+    
+        $uname=$_POST['username'];
+        $password=$_POST['password'];
+        
+        $sql="SELECT * from adminlogin WHERE Admin_ID='".$uname."' AND Admin_Password='".$password."' limit 1";
+        
+        $result= mysqli_query($con, $sql);
+        
+        if(mysqli_num_rows($result)==1){
+            header ("location: adminHome.php");
+            exit();
+        }
+        else{
+            echo " You Have Entered Incorrect Password";
+            exit();
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +32,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="db.php" method="post">
+    <form action="#" method="post">
         <input type="text" name="username" placeholder="Enter Admin ID"><br><br>
         <input type="password" name="password" placeholder="Enter Password"><br><br>
         
