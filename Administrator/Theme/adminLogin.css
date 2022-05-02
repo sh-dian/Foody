@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: flex;
+}
+
+h1{
+    font-size: 25px;
+    text-align: right;
+    margin-top: 25%;
+}
+
+.logincard{
+    background-color: white;
+    box-shadow: 0 0 35px lightgray;
+    width: 75%;
+    height: 25rem;
+    padding: 20px;
+    margin-top: 7%;
+    margin-left: 11%;
+    border-radius: 2rem 15rem 15rem 2rem;
+    display: grid;
+}
+
+form .inputBox{
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.inputBox input{
+    text-align: center;
+    padding-left: 30px;
+    height: 100%;
+    width: 18rem;
+
+    color: #243F4D;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1.5px solid #AD886E;
+    border-radius: 1.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.inputBox .icon{
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+
+    color: #436372;
+}
+
+.loginbutton{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 8%;
+    border-radius: 9px;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 0.9rem;
+
+    background-color: #AD886E;
+    color: white;
+}
+
+.loginbutton:hover{
+    background-color:  #fcd7b6;
+    color: black;
+}
