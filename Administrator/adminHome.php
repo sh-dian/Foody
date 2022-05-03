@@ -11,19 +11,30 @@
     <script src="JavaScript/function.js"></script>
 
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
-
+    
 </head>
 <body>  
+
+    <nav class="vNavbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+          <a href="#" class="navbar-link">
+            <i class="fa-solid fa-circle-user"></i><span>Home</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+
+
+<!--
   <div id="mySidenav" class="sidenav">  
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         
- </div>  
+  </div>  
 
- <!-- Use any element to open the sidenav -->  
- <span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>  
-
- <div id="main">  
- </div> 
-
+  <span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+-->
 </body>
 </html>
