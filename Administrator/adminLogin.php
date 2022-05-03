@@ -32,15 +32,15 @@
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="logincard">
-        <div class="container">
-            <div>
-                <img src="Theme/admin.gif" alt="illustrations">
-            </div>
+    <div class="container">
+        <div class="form-container">
 
-            <div>
-                <form action="#" method="post">
-                <h1>FOODY ADMINISTRATOR</h1>
+            <form action="#" method="post">
+                    <div>
+                        <img src="Theme/logo.png" alt="Foody Logo" class="image">
+                        <h1>ADMINISTRATOR</h1>
+                    </div>
+                    
                     <div class="inputBox">
                         <input type="text" name="username" placeholder="Enter Admin ID" required>
                         <div class="icon"><i class="fa-solid fa-user-large"></i></div>
@@ -50,11 +50,11 @@
                         <input type="password" name="password" placeholder="Enter Password" required>
                         <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
                     </div>
-                    
-                    <button type="submit" class="loginbutton">Login</button>
-                </form>
-            </div>
+
+                    <input type="submit" value="Login" class="button">
+            </form>
         </div>
     </div>
+
 </body>
 </html>
