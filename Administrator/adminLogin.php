@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form Administrator</title>
     
-    <link rel="stylesheet" href="Theme/adminLogin.css">
+    <link rel="stylesheet" href="CSS/adminLogin.css">
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -37,7 +37,7 @@
 
             <form action="#" method="post">
                     <div>
-                        <img src="Theme/logo.png" alt="Foody Logo" class="image">
+                        <img src="CSS/logo.png" alt="Foody Logo" class="image">
                         <h1>ADMINISTRATOR</h1>
                     </div>
                     

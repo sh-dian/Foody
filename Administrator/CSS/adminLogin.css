@@ -67,7 +67,7 @@ form .inputBox{
 }
 
 .inputBox input:focus{
-    border-color: #243f4d;
+    border: 1.8px solid;
 }
   
 .inputBox .icon{
@@ -88,4 +88,9 @@ form .inputBox{
     border-radius: 3rem;
     background: #AD886E;
     text-transform: uppercase;
+}
+
+.button:hover{
+    background: #436372;
+    color: white;
 }
