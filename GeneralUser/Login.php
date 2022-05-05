@@ -1,3 +1,25 @@
+<?php
+    include_once 'db.php';
+
+    if(isset($_POST['username'])){
+    
+        $uname=$_POST['username'];
+        $password=$_POST['password'];
+        
+        $sql="SELECT * from adminlogin WHERE Cust_ID='".$uname."' AND Cust_Password='".$password."' limit 1";
+        
+        $result= mysqli_query($con, $sql);
+        
+        if(mysqli_num_rows($result)==1){
+            header ("location: HomePage.php");
+            exit();
+        }
+        else{
+            echo " You Have Entered Incorrect Password";
+            exit();
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
