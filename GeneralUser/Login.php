@@ -1,12 +1,12 @@
 <?php
-    include_once 'db.php';
+    include_once 'C:\xampp\htdocs\Foody\db.php';
 
     if(isset($_POST['username'])){
     
         $uname=$_POST['username'];
         $password=$_POST['password'];
         
-        $sql="SELECT * from adminlogin WHERE Cust_ID='".$uname."' AND Cust_Password='".$password."' limit 1";
+        $sql="SELECT * from customer WHERE Cust_PhoneNum='".$uname."' AND Cust_Password='".$password."' limit 1";
         
         $result= mysqli_query($con, $sql);
         
@@ -42,7 +42,7 @@
             </div>
             
             <div class="inputBox">
-                <input type="text" name="username" placeholder="Enter User ID" required>
+                <input type="text" name="username" placeholder="Enter Phone Number" required>
                 <div class="icon"><i class="fa-solid fa-user-large"></i></div>
             </div>
 

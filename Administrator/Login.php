@@ -1,5 +1,5 @@
 <?php
-    include_once 'db.php';
+    include_once 'C:\xampp\htdocs\Foody\db.php';
 
     if(isset($_POST['username'])){
     

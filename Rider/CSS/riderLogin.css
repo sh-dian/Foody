@@ -1,0 +1,106 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image{
+    width: 100%;
+    margin-top: 15%;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.logo{
+    width: 55%;
+    margin-left: 5rem;
+}
+
+.title{
+    margin-top: 0%;
+}
+
+.form-container{
+    width: 25%;
+    height: 32rem;
+    margin-top: 4%;
+
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 50px lightgray;
+    background: #243f4d;
+
+    border-radius: 1.5rem;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+form .inputBox{
+    height: 50px;
+    width: 60%;
+    position: relative;
+    margin-top: 15px;
+  }
+
+.inputBox input{
+    height: 100%;
+    outline: none;
+    padding-left: 45px;
+    transition: all 0.3s ease;
+
+    text-align: center;
+    border: 1.5px solid #AD886E;
+    border-radius: 2rem;
+}
+
+.inputBox input:focus{
+    border: 2px solid black;
+}
+  
+.inputBox .icon{
+    position: absolute;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #436372;
+}
+
+.forgotLink{
+    padding-top: 1rem;
+}
+
+.forgotLink a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.forgotLink a:hover{
+    color: #AD886E;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.button{
+    margin-top: 15px;
+    width: 8rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    color: white;
+    border-radius: 3rem;
+    background: #AD886E;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background: #436372;
+    color: white;
+}
