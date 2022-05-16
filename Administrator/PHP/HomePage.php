@@ -15,7 +15,7 @@
 <body> 
 
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.html" ?>
+    <?php include "./NavigationBar.php" ?>
 
     
 

@@ -23,7 +23,7 @@
 
         <ul class="navigation">
             <li>
-                <a href="#">
+                <a href="HomePage.php">
                     <i class='bx bxs-dashboard'></i>
                     <span class="links">Dashboard</span>
                 </a>
@@ -31,7 +31,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="AdminProfile.php">
                     <i class='bx bx-user-circle'></i>
                     <span class="links">Profile</span>
                 </a>
@@ -39,7 +39,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="UserList.php">
                     <i class='bx bx-data'></i>
                     <span class="links">Manage User</span>
                 </a>
@@ -47,7 +47,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="CalculationMenu.php">
                     <i class='bx bx-money-withdraw'></i>
                     <span class="links">Financial</span>
                 </a>
@@ -55,15 +55,7 @@
             </li>
 
             <li>
-                <a href="#">
-                    <i class='bx bxs-report'></i>
-                    <span class="links">Report</span>
-                </a>
-                <span class="tooltip">Report</span>            
-            </li>
-
-            <li>
-                <a href="#">
+                <a href="Setting.php">
                     <i class='bx bx-cog' id="setting"></i>
                     <span class="links">Setting</span>
                 </a>
@@ -71,7 +63,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="Login.php">
                     <i class='bx bx-log-out-circle' id="logout"></i>
                     <span class="links">Logout</span>
                 </a>
