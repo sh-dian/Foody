@@ -14,6 +14,10 @@
 </head>
 <body> 
 
+    <!-- Navigation Bar -->
+    <?php include "./NavigationBar.html" ?>
+
+    
 
 </body>
 </html>
