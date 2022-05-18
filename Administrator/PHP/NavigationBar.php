@@ -8,7 +8,7 @@
     <!-- Boxicons CDN Link-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="Navigation.css">
+    <link rel="stylesheet" href="CSS/Navigation.css">
 </head>
 <body>
     
