@@ -63,10 +63,10 @@ form .newUser .inputBox{
 
 form .button{
     height: 45px;
-    margin: 35px 0;
+    margin: 20px 0;
 }
 
-form .button button{
+form .button input{
     height: 100%;
     width: 30%;
     float: right;
@@ -75,6 +75,11 @@ form .button button{
     color: white;
     background: #AD886E;
     text-transform: uppercase;
+}
+
+.button input:hover{
+    background: #243f4d;
+    color: white;
 }
 
 
