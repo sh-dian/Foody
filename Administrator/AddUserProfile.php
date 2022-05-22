@@ -15,7 +15,7 @@
     <div class="flexbox">
         <div class="title"><h1>Add New User</h1></div>
 
-        <form action="DatabasePHP/addUser.php" method="post">
+        <form action="" method="post">
             <div class="newUser">
                 <div class="inputBox">
                     <span class="details">Full Name</span>
