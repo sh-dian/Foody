@@ -45,9 +45,7 @@
         ?>    
     </form>
 
-    <form action="UpdateAdminProfile.php">
-        <button type="submit" name="send" value="Edit" class="button">Edit</button>
-    </form>
+    <a href="UpdateAdminProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
 
 </body>
 </html>

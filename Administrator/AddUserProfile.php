@@ -1,3 +1,37 @@
+<?php
+    include_once 'C:\xampp\htdocs\Foody\db.php';
+    session_start();
+
+    if(!isset($_SESSION["adminID"])){
+        header("Location: Login.php");
+    }
+    else{
+
+        if(isset($_POST["Add_Data"])){
+            $name = mysqli_real_escape_string($con, $_POST["name"]);
+            $pass = mysqli_real_escape_string($con, $_POST["pass"]);
+            $email = mysqli_real_escape_string($con, $_POST["email"]);
+            $phoneNum = mysqli_real_escape_string($con, $_POST["phoneNum"]);
+            $address = mysqli_real_escape_string($con, $_POST["address"]);
+
+            $query= "INSERT INTO customer(Cust_Name,Cust_Password,Cust_Email,Cust_PhoneNum,Cust_Address) VALUES('$name','$pass','$email','$phoneNum','$address')";
+            $result = mysqli_query($con,$query);
+
+            if($result){
+                echo "
+                <script>
+                    alert('Data Added Success!');
+                    window.location = 'UserList.php';
+                </script>";
+
+            }else{
+                echo "<script>alert('Data Added FAILED');</script>";
+                echo $con->error;
+            }
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +79,7 @@
             </div>
 
             <div class="button">
-                <input name="send" type="submit" value="Add_Data" class="button">
+                <input name="Add_Data" type="submit" value="Add Data" class="button">
             </div>
 
         </form>
