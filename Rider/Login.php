@@ -1,23 +1,26 @@
 <?php
     include_once 'C:\xampp\htdocs\Foody\db.php';
 
-    if(isset($_POST['username'])){
-    
-        $uname=$_POST['username'];
-        $password=$_POST['password'];
+    session_start();
+
+    if(isset($_POST["login"])){
+        $uname= mysqli_real_escape_string($con, $_POST["username"]);
+        $password= mysqli_real_escape_string($con, $_POST["password"]);
+
+        $checkEmail = mysqli_query($con, "SELECT * from rider WHERE Rider_PhoneNum='".$uname."' AND Rider_Password='".$password."' limit 1");
         
-        $sql="SELECT * from rider WHERE Rider_PhoneNum='".$uname."' AND Rider_Password='".$password."' limit 1";
-        
-        $result= mysqli_query($con, $sql);
-        
-        if(mysqli_num_rows($result)==1){
-            header ("location: HomePage.php");
-            exit();
+        if (mysqli_num_rows($checkEmail) > 0) {
+
+            $row = mysqli_fetch_assoc($checkEmail);
+
+            $_SESSION["rider_ID"] = $row['Rider_PhoneNum'];
+
+            header("Location: HomePage.php");
+
+        } else {
+            echo "<script>alert('Login details is incorrect. Please try again.');</script>";
         }
-        else{
-            echo " You Have Entered Incorrect Password";
-            exit();
-        }
+        
     }
 ?>
 <!DOCTYPE html>

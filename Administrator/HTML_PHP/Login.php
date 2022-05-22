@@ -22,31 +22,6 @@
         
     }
 
-    if(isset($_POST['username'])){
-    
-        $uname= mysqli_real_escape_string($_POST['username']);
-        $password=$_POST['password'];
-        
-        $sql="SELECT * from adminlogin WHERE Admin_ID='".$uname."' AND Admin_Password='".$password."' limit 1";
-        
-        $result= mysqli_query($con, $sql);
-        
-        if(mysqli_num_rows($result)==1){
-            session_start();
-            $_SESSION["Login"] = "YES";
-            $_SESSION['username'] = $uname;
-
-            header ("location: HomePage.php");
-            exit();
-        }
-        else{
-            session_start();
-            $_SESSION["Login"] = "NO";
-
-            echo " You Have Entered Incorrect Password";
-            exit();
-        }
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

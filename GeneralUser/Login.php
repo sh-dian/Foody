@@ -1,6 +1,28 @@
 <?php
     include_once 'C:\xampp\htdocs\Foody\db.php';
 
+    session_start();
+
+    if(isset($_POST["login"])){
+        $uname= mysqli_real_escape_string($con, $_POST["username"]);
+        $password= mysqli_real_escape_string($con, $_POST["password"]);
+
+        $checkEmail = mysqli_query($con, "SELECT * from customer WHERE Cust_PhoneNum='".$uname."' AND Cust_Password='".$password."' limit 1");
+        
+        if (mysqli_num_rows($checkEmail) > 0) {
+
+            $row = mysqli_fetch_assoc($checkEmail);
+
+            $_SESSION["userID"] = $row['Cust_PhoneNum'];
+
+            header("Location: HomePage.php");
+
+        } else {
+            echo "<script>alert('Login details is incorrect. Please try again.');</script>";
+        }
+        
+    }
+
     if(isset($_POST['username'])){
     
         $uname=$_POST['username'];
@@ -55,7 +77,7 @@
                 <a href="#" target="_blank">Forgot Password ?</a>
             </div>
 
-            <input type="submit" value="Login" class="button">
+            <input type="submit" value="Login" class="button" name="login">
     </form>
     </div>
     
