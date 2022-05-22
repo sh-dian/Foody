@@ -1,3 +1,12 @@
+<?php
+    include_once 'C:\xampp\htdocs\Foody\db.php';
+    session_start();
+
+    if(!isset($_SESSION["adminID"])){
+        header("Location: Login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,18 +24,29 @@
 
     <h1>Admin Profile</h1>
 
-    <?php
-        include_once 'C:\xampp\htdocs\Foody\db.php';
+    <form action="" method="post">
+        <?php
+            $query = "SELECT * FROM adminlogin WHERE Admin_ID = '{$_SESSION["adminID"]}' ";
+            $result = mysqli_query($con, $query);
 
-        $query = "SELECT * FROM adminlogin WHERE Admin_ID= 'FA001'";
-        $result = $con->query($query);
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+        ?>
 
-        $data = $result->fetch_assoc();
-        echo "Admin ID: " . $data["Admin_ID"]. "<br>Name: " . $data["Admin_Name"]. "<br>Email: " . $data["Admin_Email"]; 
-    ?>
+            <label>Name: </label>
+            <input type="text" id="admin_Name" name="admin_Name" value="<?php echo $row['Admin_Name'] ?>" disabled required><br><br>
+
+            <label>Email: </label>
+            <input type="email" id="admin_Email" name="admin_Email" value="<?php echo $row['Admin_Email'] ?>" disabled required><br><br>
+        
+        <?php
+                }
+            }
+        ?>    
+    </form>
 
     <form action="UpdateAdminProfile.php">
-        <input type="submit" name="send" value="Edit" class="button">
+        <button type="submit" name="send" value="Edit" class="button">Edit</button>
     </form>
 
 </body>

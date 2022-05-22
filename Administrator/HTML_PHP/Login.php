@@ -1,9 +1,30 @@
 <?php
     include_once 'C:\xampp\htdocs\Foody\db.php';
+    session_start();
+
+    if(isset($_POST["login"])){
+        $uname= mysqli_real_escape_string($con, $_POST["username"]);
+        $password= mysqli_real_escape_string($con, $_POST["password"]);
+
+        $checkEmail = mysqli_query($con, "SELECT Admin_ID FROM adminlogin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
+        
+        if (mysqli_num_rows($checkEmail) > 0) {
+
+            $row = mysqli_fetch_assoc($checkEmail);
+
+            $_SESSION["adminID"] = $row['Admin_ID'];
+
+            header("Location: HomePage.php");
+
+        } else {
+            echo "<script>alert('Login details is incorrect. Please try again.');</script>";
+        }
+        
+    }
 
     if(isset($_POST['username'])){
     
-        $uname=$_POST['username'];
+        $uname= mysqli_real_escape_string($_POST['username']);
         $password=$_POST['password'];
         
         $sql="SELECT * from adminlogin WHERE Admin_ID='".$uname."' AND Admin_Password='".$password."' limit 1";
@@ -58,7 +79,7 @@
                         <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
                     </div>
 
-                    <input type="submit" value="Login" class="button">
+                    <input type="submit" value="Login" class="button" name="login">
             </form>
         </div>
     </div>
