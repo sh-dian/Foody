@@ -1,5 +1,5 @@
 <?php
-    include_once 'C:\xampp\htdocs\Foody\db.php';
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
     if(!isset($_SESSION["adminID"])){
@@ -7,8 +7,8 @@
     }
     else{
         
-        $query = "SELECT * FROM customer";
-        $result = mysqli_query($con, $query);
+        $query1 = "SELECT * FROM customer";
+        $result = mysqli_query($con, $query1);
     }
 ?>
 
@@ -97,7 +97,7 @@
                             <td style="padding: 0 1rem">'.$phone.'</td>
                             <td style="padding: 0 1rem">'.$address.'</td>
                             <td style="padding: 0 1rem">
-                                <button><a href= "ViewUserProfile.php?viewid='.$id.'">View</a></button>
+                                <button><a href= "UpdateUserProfile.php?viewid='.$id.'">Update</a></button>
                                 <button><a href= "DeleteUser.php?deleteid='.$id.'">Delete</a></button>
                             </td>
                         

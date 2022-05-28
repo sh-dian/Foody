@@ -1,5 +1,5 @@
 <?php
-    include_once 'C:\xampp\htdocs\Foody\db.php';
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
     if(!isset($_SESSION["adminID"])){
@@ -33,12 +33,29 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-            <label>Name: </label>
-            <input type="text" id="admin_Name" name="admin_Name" value="<?php echo $row['Admin_Name'] ?>" disabled required><br><br>
+        <div class="adminProfile">
 
-            <label>Email: </label>
-            <input type="email" id="admin_Email" name="admin_Email" value="<?php echo $row['Admin_Email'] ?>" disabled required><br><br>
-        
+                <div class="inputBox">
+                    <span class="details">Admin ID :</span>
+                    <input type="tezt" id="admin_id" name="admin_id" value="<?php echo $row['Admin_ID'] ?>" disabled required><br><br>
+                </div>
+                
+                <div class="inputBox">
+                    <span class="details">Admin Name :</span>
+                    <input type="text" id="admin_Name" name="admin_Name" value="<?php echo $row['Admin_Name'] ?>" disabled required><br><br>
+                </div>
+                
+                <div class="inputBox">
+                    <span class="details">Admin Email :</span>
+                    <input type="email" id="admin_Email" name="admin_Email" value="<?php echo $row['Admin_Email'] ?>" disabled required><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <span class="details">Admin Password :</span>
+                    <input type="password" id="admin_pass" name="admin_pass" value="<?php echo $row['Admin_Password'] ?>" disabled required><br><br>
+                </div>
+        </div>
+
         <?php
                 }
             }
