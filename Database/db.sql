@@ -25,7 +25,9 @@ CREATE TABLE `Customer`(
     `Cust_Password` VARCHAR(10),
     `Cust_Email` VARCHAR(50),
     `Cust_PhoneNum` VARCHAR(12),
-    `Cust_Address` VARCHAR(100)
+    `Cust_Address` VARCHAR(100),
+    `Cust_Poscode` VARCHAR(6),
+    `Cust_State` VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Rider`(
@@ -42,7 +44,9 @@ CREATE TABLE `RestaurantOwner`(
     `RO_Password` VARCHAR(10),
     `RO_Email` VARCHAR(50),
     `RO_PhoneNum` VARCHAR(12),
-    `RO_Address` VARCHAR(100)
+    `RO_Address` VARCHAR(100),
+    `RO_Poscode` VARCHAR(6),
+    `RO_State` VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Restaurant`(
@@ -50,6 +54,8 @@ CREATE TABLE `Restaurant`(
     `Rest_Name` VARCHAR(50),
     `Rest_PhoneNum` VARCHAR(12),
     `Rest_Address` VARCHAR(100),
+    `Rest_Poscode` VARCHAR(6),
+    `Rest_State` VARCHAR(50),
     `Rest_OpeningHour` DATETIME,
     `Rest_ClosedHour` DATETIME
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

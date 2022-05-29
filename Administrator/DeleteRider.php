@@ -1,6 +1,6 @@
 <?php
 
-    include_once 'C:\xampp\htdocs\Foody\db.php';
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
     if(!isset($_SESSION["adminID"])){
@@ -11,7 +11,7 @@
         if(isset($_GET['deleteid'])){
             $id = $_GET['deleteid'];
 
-            $query = "DELETE FROM customer WHERE Cust_ID ='$id' ";
+            $query = "DELETE FROM rider WHERE Rider_ID ='$id' ";
             $result = mysqli_query($con,$query);
         
             if($result){

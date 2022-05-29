@@ -51,6 +51,7 @@
 
         <form action="" method="post">
             <div class="newUser">
+
                 <div class="inputBox">
                     <span class="details">Full Name</span>
                     <input class="input1" type="text" name="name" placeholder="Enter full name">
@@ -79,7 +80,7 @@
             </div>
 
             <div class="button">
-                <input name="Add_Data" type="submit" value="Add Data" class="button">
+                <button name="Add_Data" type="submit" value="Add Data" class="button">Add Data</button>
             </div>
 
         </form>

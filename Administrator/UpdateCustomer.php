@@ -10,7 +10,6 @@
 
         if(isset($_POST["Update"])){
             $custName = mysqli_real_escape_string($con, $_POST["custName"]);
-
             $query = "UPDATE customer SET Cust_Name='$custName' WHERE Cust_ID = '$id'";
 
             $result = mysqli_query($con, $query);
@@ -38,13 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update User Profile</title>
 
-    <style>
-        body{
-            margin-left: 45%;
-            margin-top: 15%;
-            padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="CSS/updateUser.css"/>
 
 </head>
 <body>
@@ -65,13 +58,39 @@
                 if(mysqli_num_rows($result) > 0){
                     while($row = mysqli_fetch_assoc($result)){
         ?>
+            <div class="display">
+                
+                <div class="inputBox">
+                    <label>ID: </label>
+                    <input type="text" id="custID" name="custID" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
+                </div>
 
-            <label>User ID: </label>
-            <input type="text" id="custID" name="custID" value="<?php echo $row['Cust_ID'] ?>"><br><br>
+                <div class="inputBox">
+                    <label>Full Name: </label>
+                    <input type="text" id="custName" name="custName" value="<?php echo $row['Cust_Name'] ?>"><br><br>
+                </div>
 
-            <label>User Name: </label>
-            <input type="text" id="custName" name="custName" value="<?php echo $row['Cust_Name'] ?>"><br><br>
-        
+                <div class="inputBox">
+                    <label>Phone Number: </label>
+                    <input type="text" id="custPhoneNum" name="custPhoneNum" value="<?php echo $row['Cust_PhoneNum'] ?>"><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <label>Address: </label>
+                    <input type="text" id="custAddress" name="custAddress" value="<?php echo $row['Cust_Address'] ?>"><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <label>Email: </label>
+                    <input type="text" id="custEmail" name="custEmail" value="<?php echo $row['Cust_Email'] ?>"><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <label>Password: </label>
+                    <input type="text" id="custPassword" name="custPassword" value="<?php echo $row['Cust_Password'] ?>"><br><br>
+                </div>
+
+            </div>
         <?php
                     }
                 }
