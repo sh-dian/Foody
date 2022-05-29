@@ -6,11 +6,11 @@
         $uname= mysqli_real_escape_string($con, $_POST["username"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkEmail = mysqli_query($con, "SELECT Admin_ID FROM adminlogin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Admin_ID FROM adminlogin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
         
-        if (mysqli_num_rows($checkEmail) > 0) {
+        if (mysqli_num_rows($checkID) > 0) {
 
-            $row = mysqli_fetch_assoc($checkEmail);
+            $row = mysqli_fetch_assoc($checkID);
 
             $_SESSION["adminID"] = $row['Admin_ID'];
 
