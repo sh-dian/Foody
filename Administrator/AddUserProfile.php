@@ -54,27 +54,27 @@
 
                 <div class="inputBox">
                     <span class="details">Full Name</span>
-                    <input class="input1" type="text" name="name" placeholder="Enter full name">
+                    <input class="input1" type="text" name="name" placeholder="Enter full name" required>
                 </div>
 
                 <div class="inputBox">
                     <span class="details">Password</span>
-                    <input class="input1" type="password" name="pass" placeholder="Enter Password">
+                    <input class="input1" type="password" name="pass" placeholder="Enter Password" required>
                 </div>
 
                 <div class="inputBox">
                     <span class="details">Email</span>
-                    <input class="input1" type="text" name="email" placeholder="Enter Email">
+                    <input class="input1" type="text" name="email" placeholder="Enter Email" required>
                 </div>
 
                 <div class="inputBox">
                     <span class="details">Phone Number</span>
-                    <input class="input1" type="text" name="phoneNum" placeholder="Enter Phone Number">
+                    <input class="input1" type="text" name="phoneNum" placeholder="Enter Phone Number" required>
                 </div>
 
                 <div class="inputBox">
                     <span class="details">Address</span>
-                    <input class="input3" type="text" name="address" placeholder="Enter full address">
+                    <input class="input3" type="text" name="address" placeholder="Enter full address" required>
                 </div>
 
             </div>
