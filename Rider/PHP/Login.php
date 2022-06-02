@@ -41,7 +41,7 @@
 
             <form action='#' method="post">
                 <div>
-                    <img src="CSS/" alt="Foody Logo" class="image">
+                    <img src="logo.png" alt="Foody Logo" class="image">
                     <h1>RIDER</h1>
                 </div>
 
