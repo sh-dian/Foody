@@ -6,7 +6,7 @@
         $uname= mysqli_real_escape_string($con, $_POST["username"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkID = mysqli_query($con, "SELECT Admin_ID FROM adminlogin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Admin_ID FROM admin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
         
         if (mysqli_num_rows($checkID) > 0) {
 

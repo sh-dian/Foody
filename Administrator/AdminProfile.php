@@ -26,7 +26,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM adminlogin WHERE Admin_ID = '{$_SESSION["adminID"]}' ";
+            $query = "SELECT * FROM Admin WHERE Admin_ID = '{$_SESSION["adminID"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){

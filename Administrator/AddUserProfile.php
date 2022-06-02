@@ -6,7 +6,7 @@
         header("Location: Login.php");
     }
     else{
-
+        /*
         if(isset($_POST["Add_Data"])){
             $name = mysqli_real_escape_string($con, $_POST["name"]);
             $pass = mysqli_real_escape_string($con, $_POST["pass"]);
@@ -29,6 +29,7 @@
                 echo $con->error;
             }
         }
+        */
     }
 ?>
 
@@ -41,6 +42,7 @@
     <title>Add User</title>
 
     <link rel="stylesheet" href="CSS/addUser.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
 </head>
