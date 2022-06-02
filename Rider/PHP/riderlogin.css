@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url(admin.svg);
+    background-repeat: no-repeat;
+    background-size: 53%;
+    font-size: 15px;
+}
+
+h1{
+    text-align: center;
+}
+
+.image{
+    width: 45%;
+    margin-left: 28%;
+    padding: 0%;
+}
+
+.container{
+    height: 39.5rem;
+    margin-left: 58%;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px lightgray;
+    border-radius: 20rem 0 0 20rem;
+    background: linear-gradient(to bottom left, #a3bbc8 0%, rgb(48, 46, 46) 100%);
+}
+
+.form-container{
+    position: relative;
+    height: 100%;
+    left: 1rem;
+    top: 2rem;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form .inputBox{
+    height: 50px;
+    width: 50%;
+    position: relative;
+    margin-top: 15px;
+  }
+
+.inputBox input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 45px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+
+    text-align: center;
+    border: 1.5px solid #AD886E;
+    border-radius: 2rem;
+}
+
+.inputBox input:focus{
+    border: 1.8px solid;
+}
+  
+.inputBox .icon{
+    position: absolute;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #436372;
+}
+
+.button{
+    margin-top: 15px;
+    width: 8rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    color: white;
+    border-radius: 3rem;
+    background: #AD886E;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background: #436372;
+    color: white;
+}
