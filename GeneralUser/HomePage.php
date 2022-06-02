@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Home</title>
+
+    <link rel="stylesheet" href="Theme/userHome.css">
+
+    <script src="JavaScript/function.js"></script>
+    <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
+    
 </head>
-<body>
+<body> 
+
     <!-- Navigation Bar -->
-    <?php include "Administrator/HTML_PHP/NavigationBar.php" ?>
+    <?php include "./NavigationBar.php" ?>
+
+    
+
 </body>
 </html>
