@@ -2,7 +2,7 @@
     include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
-    if(!isset($_SESSION["adminID"])){
+    if(!isset($_SESSION["RO_login"])){
         header("Location: Login.php");
     }
 ?>
@@ -26,7 +26,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM restaurantowner WHERE RO_PhoneNum = '{$_SESSION["RO_PhoneNum"]}' ";
+            $query = "SELECT * FROM restaurantowner WHERE RO_PhoneNum = '{$_SESSION["RO_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
@@ -82,7 +82,7 @@
         ?>    
     </form>
 
-    <a href="UpdateAdminProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
+    <a href="UpdateROProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
 
 </body>
 </html>
