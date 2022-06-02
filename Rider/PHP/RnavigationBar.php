@@ -23,15 +23,7 @@
 
         <ul class="navigation">
             <li>
-                <a href="HomePage.php">
-                    <i class='bx bxs-dashboard'></i>
-                    <span class="links">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>            
-            </li>
-
-            <li>
-                <a href="AdminProfile.php">
+                <a href="RProfil.php">
                     <i class='bx bx-user-circle'></i>
                     <span class="links">Profile</span>
                 </a>
@@ -39,31 +31,23 @@
             </li>
 
             <li>
-                <a href="UserList.php">
-                    <i class='bx bx-data'></i>
-                    <span class="links">Manage User</span>
-                </a>
-                <span class="tooltip">Manage User</span>            
-            </li>
-
-            <li>
-                <a href="CalculationMenu.php">
+                <a href="RCommission.php">
                     <i class='bx bx-money-withdraw'></i>
-                    <span class="links">Financial</span>
+                    <span class="links">Commission</span>
                 </a>
-                <span class="tooltip">Financial</span>            
+                <span class="tooltip">Commission</span>            
             </li>
 
             <li>
-                <a href="Setting.php">
-                    <i class='bx bx-cog' id="setting"></i>
-                    <span class="links">Setting</span>
+                <a href="RHistory.php">
+                    <i class='bx bx-cog' id="history"></i>
+                    <span class="links">History</span>
                 </a>
-                <span class="tooltip">Setting</span>            
+                <span class="tooltip">History</span>            
             </li>
 
             <li>
-                <a href="Login.php">
+                <a href="RLogin.php">
                     <i class='bx bx-log-out-circle' id="logout"></i>
                     <span class="links">Logout</span>
                 </a>

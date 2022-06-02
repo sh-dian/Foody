@@ -7,15 +7,15 @@
         $uname= mysqli_real_escape_string($con, $_POST["username"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkEmail = mysqli_query($con, "SELECT * from rider WHERE Rider_PhoneNum='".$uname."' AND Rider_Password='".$password."' limit 1");
+        $checkEmail = mysqli_query($con, "SELECT * from Rider_ID WHERE Rider_ID='$rname' AND Rider_Password='$rpassword' limit 1");
         
         if (mysqli_num_rows($checkEmail) > 0) {
 
             $row = mysqli_fetch_assoc($checkEmail);
 
-            $_SESSION["rider_ID"] = $row['Rider_PhoneNum'];
+            $_SESSION["riderID"] = $row['Rider_ID'];
 
-            header("Location: HomePage.php");
+            header("Location: RHomePage.php");
 
         } else {
             echo "<script>alert('Login details is incorrect. Please try again.');</script>";
@@ -52,12 +52,12 @@
                 </div>
                 
                 <div class="inputBox">
-                    <input type="text" name="username" placeholder="Enter Phone Number" required>
+                    <input type="text" name="rname" placeholder="Enter Your ID" required>
                     <div class="icon"><i class="fa-solid fa-user-large"></i></div>
                 </div>
     
                 <div class="inputBox">
-                    <input type="password" name="password" placeholder="Enter Password" required>
+                    <input type="password" name="rpassword" placeholder="Enter Password" required>
                     <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
                 </div>
     
