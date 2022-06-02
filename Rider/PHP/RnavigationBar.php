@@ -8,14 +8,14 @@
     <!-- Boxicons CDN Link-->
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="CSS/RnavigationBar.css">
+    <link rel="stylesheet" href="RnavigationBar.css">
 </head>
 <body>
     
     <div class="sidebar">
-        <div class="logoContent">
+        <div class="Content">
             <div class="logo">
-                <div class="logoName">Foody</div>
+                <div class="logo_name">Foody</div>
             </div>
 
             <i class='bx bx-menu' id="butn"></i>

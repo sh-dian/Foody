@@ -1,57 +1,67 @@
-.container{
-    display: flex;
-    justify-content: space-evenly;
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.image{
-    width: 100%;
-    margin-top: 15%;
+body{
+    background-image: url(rider.svg);
+    background-repeat: no-repeat;
+    background-size: 53%;
+    font-size: 15px;
 }
 
 h1{
     text-align: center;
-    color: white;
 }
 
-.logo{
-    width: 55%;
-    margin-left: 5rem;
+.image{
+    width: 45%;
+    margin-left: 28%;
+    padding: 0%;
 }
 
-.title{
-    margin-top: 0%;
+.container{
+    height: 39.5rem;
+    margin-left: 58%;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 50px lightgray;
+    border-radius: 20rem 0 0 20rem;
+    background: linear-gradient(to bottom left, #a3bbc8 0%, rgb(48, 46, 46) 100%);
 }
 
 .form-container{
-    width: 25%;
-    height: 32rem;
-    margin-top: 4%;
-
-    align-items: center;
-    overflow: hidden;
-    box-shadow: 0 0 50px lightgray;
-    background: #243f4d;
-
-    border-radius: 1.5rem;
+    position: relative;
+    height: 100%;
+    left: 1rem;
+    top: 2rem;
 }
 
 form{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 form .inputBox{
     height: 50px;
-    width: 60%;
+    width: 50%;
     position: relative;
     margin-top: 15px;
   }
 
 .inputBox input{
     height: 100%;
+    width: 100%;
     outline: none;
     padding-left: 45px;
+    font-size: 17px;
     transition: all 0.3s ease;
 
     text-align: center;
@@ -60,7 +70,7 @@ form .inputBox{
 }
 
 .inputBox input:focus{
-    border: 2px solid black;
+    border: 1.8px solid;
 }
   
 .inputBox .icon{
@@ -70,23 +80,6 @@ form .inputBox{
     left: 20px;
     transform: translateY(-50%);
     color: #436372;
-}
-
-.forgotLink{
-    padding-top: 1rem;
-}
-
-.forgotLink a{
-    color: white;
-    text-decoration: none;
-    font-size: 13px;
-    font-style: italic;
-}
-
-.forgotLink a:hover{
-    color: #AD886E;
-    text-decoration: underline;
-    font-size: 13px;
 }
 
 .button{
