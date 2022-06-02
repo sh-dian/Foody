@@ -1,5 +1,5 @@
 <?php
-    include_once 'C:\xampp\htdocs\Foody\db.php';
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
     if(!isset($_SESSION["RO_ID"])){
@@ -46,7 +46,7 @@
 <body>
     
     <div class="flexbox">
-        <div class="title"><h1>Update New Menu</h1></div>
+        <div class="title"><h1>Add New Menu</h1></div>
 
         <form action="" method="post">
             <div class="newMenu">
