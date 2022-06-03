@@ -31,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form Rider</title>
     
-    <link rel="stylesheet" href="RLogin.css">
+    <link rel="stylesheet" href="CSS/riderLogin.css">
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -40,7 +40,7 @@
 
             <form action="#" method="post">
                     <div>
-                        <img src="logo.png" alt="Foody Logo" class="image">
+                        <img src="CSS/logo.png" alt="Foody Logo" class="image">
                         <h1>RIDER</h1>
                     </div>
                     
