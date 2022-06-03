@@ -2,7 +2,7 @@
     include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
-    if(!isset($_SESSION["CustID"])){
+    if(!isset($_SESSION["Cust_login"])){
         header("Location: Login.php");
     }
     else{
