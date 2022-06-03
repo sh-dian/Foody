@@ -12,7 +12,7 @@
             $adminEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
             $adminPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
 
-            $query = "UPDATE Admin SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password' WHERE Cust_ID = '{$_SESSION["CustID"]}'";
+            $query = "UPDATE Admin SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password' WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -49,7 +49,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM Customer WHERE Cust_ID = '{$_SESSION["Cust_ID"]}' ";
+            $query = "SELECT * FROM Customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
@@ -59,7 +59,7 @@
             <div class="updateCustomer">
                 <div class="inputBox">
                     <span class="details">Customer ID :</span>
-                    <input type="tezt" id="Cust_ID" name="Cust_ID" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
+                    <input type="text" id="Cust_ID" name="Cust_ID" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">
