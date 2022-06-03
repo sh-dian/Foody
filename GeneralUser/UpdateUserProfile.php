@@ -49,7 +49,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM Customer WHERE Cust_ID = '{$_SESSION["Cust_ID"]}' ";
+            $query = "SELECT * FROM Customer WHERE Cust_ID = '{$_SESSION["Cust_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
