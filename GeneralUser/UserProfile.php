@@ -33,7 +33,7 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="adminProfile">
+        <div class="custProfile">
 
                 <div class="inputBox">
                     <span class="details">Customer ID :</span>
