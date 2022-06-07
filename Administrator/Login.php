@@ -3,16 +3,16 @@
     session_start();
 
     if(isset($_POST["login"])){
-        $uname= mysqli_real_escape_string($con, $_POST["username"]);
+        $email= mysqli_real_escape_string($con, $_POST["email"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkID = mysqli_query($con, "SELECT Admin_ID FROM admin WHERE Admin_ID='$uname' AND Admin_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Admin_Email FROM admin WHERE Admin_Email='$email' AND Admin_Password='$password' limit 1");
         
         if (mysqli_num_rows($checkID) > 0) {
 
             $row = mysqli_fetch_assoc($checkID);
 
-            $_SESSION["adminID"] = $row['Admin_ID'];
+            $_SESSION["adminLogin"] = $row['Admin_Email'];
 
             header("Location: HomePage.php");
 
@@ -45,7 +45,7 @@
                     </div>
                     
                     <div class="inputBox">
-                        <input type="text" name="username" placeholder="Enter Admin ID" required>
+                        <input type="email" name="email" placeholder="Enter Admin Email" required>
                         <div class="icon"><i class="fa-solid fa-user-large"></i></div>
                     </div>
 

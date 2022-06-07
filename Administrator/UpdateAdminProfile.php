@@ -2,7 +2,7 @@
     include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
-    if(!isset($_SESSION["adminID"])){
+    if(!isset($_SESSION["adminLogin"])){
         header("Location: Login.php");
     }
     else{
@@ -12,7 +12,7 @@
             $adminEmail = mysqli_real_escape_string($con, $_POST["admin_Email"]);
             $adminPass = mysqli_real_escape_string($con, $_POST["admin_pass"]);
 
-            $query = "UPDATE Admin SET Admin_Name='$adminName' , Admin_Email ='$adminEmail', Admin_Password='$adminPass' WHERE Admin_ID = '{$_SESSION["adminID"]}'";
+            $query = "UPDATE Admin SET Admin_Name='$adminName' , Admin_Email ='$adminEmail', Admin_Password='$adminPass' WHERE Admin_Email = '{$_SESSION["adminLogin"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -49,7 +49,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM Admin WHERE Admin_ID = '{$_SESSION["adminID"]}' ";
+            $query = "SELECT * FROM Admin WHERE Admin_Email = '{$_SESSION["adminLogin"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
