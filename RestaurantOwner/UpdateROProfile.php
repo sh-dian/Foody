@@ -5,6 +5,29 @@
     if(!isset($_SESSION["RO_login"])){
         header("Location: Login.php");
     }
+    else{
+        if(isset($_POST["Update"])){
+
+            $ROName = mysqli_real_escape_string($con, $_POST["RO_Name"]);
+            $ROEmail = mysqli_real_escape_string($con, $_POST["RO_Email"]);
+            $ROPass = mysqli_real_escape_string($con, $_POST["RO_pass"]);
+
+            $query = "UPDATE restaurantowner SET RO_Name='$ROName' , RO_Email ='$ROEmail', RO_Password='$ROPass' WHERE RO_PhoneNum = '{$_SESSION["RO_Login"]}'";
+            $result = mysqli_query($con, $query);
+            
+            if($result){
+                echo "
+                <script>
+                    alert('Updated Success!');
+                    window.location = 'ROProfile.php';
+                </script>";
+
+            }else{
+                echo "<script>alert('Updated FAILED');</script>";
+                echo $con->error;
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Owner Profile</title>
 
-    <link rel="stylesheet" href="CSS/ROProfile.css"/>
+    <link rel="stylesheet" href="CSS/UpdateROProfile.css"/>
 
 </head>
 <body>
@@ -33,7 +56,7 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="ROProfile">
+        <div class="UpdateProfile">
 
                 <div class="inputBox">
                     <span class="details">Restaurant Owner ID :</span>
@@ -57,7 +80,7 @@
 
                 <div class="inputBox">
                     <span class="details">Phone Number :</span>
-                    <input type="text" id="RO_Phonenum" name="RO_Phonenum" value="<?php echo $row['RO_PhoneNum'] ?>" ><br><br>
+                    <input type="text" id="RO_Phonenum" name="RO_Phonenum" value="<?php echo $row['RO_PhoneNum'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">
