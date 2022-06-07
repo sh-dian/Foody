@@ -33,11 +33,11 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="adminProfile">
+        <div class="custProfile">
 
                 <div class="inputBox">
                     <span class="details">Customer ID :</span>
-                    <input type="tezt" id="Cust_ID" name="Cust_ID" value="<?php echo $row['Cust_ID"'] ?>" disabled required><br><br>
+                    <input type="text" id="Cust_ID" name="Cust_ID" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">

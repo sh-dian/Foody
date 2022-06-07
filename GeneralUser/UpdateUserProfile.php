@@ -2,7 +2,7 @@
     include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
-    if(!isset($_SESSION["CustID"])){
+    if(!isset($_SESSION["Cust_login"])){
         header("Location: Login.php");
     }
     else{
@@ -11,8 +11,13 @@
             $adminName = mysqli_real_escape_string($con, $_POST["Cust_Name"]);
             $adminEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
             $adminPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
+            $custPhone = mysqli_real_escape_string($con, $_POST["Cust_PhoneNum"]);
 
+<<<<<<< HEAD
             $query = "UPDATE Admin SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password' WHERE Cust_ID = '{$_SESSION["CustID"]}'";
+=======
+            $query = "UPDATE customer SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password', Cust_PhoneNum = '$custPhone' , WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}'";
+>>>>>>> cd004c7de679f704ac24bf8ebc41f28cbed3a8d3
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -49,7 +54,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM Customer WHERE Cust_ID = '{$_SESSION["Cust_ID"]}' ";
+            $query = "SELECT * FROM Customer WHERE Cust_ID = '{$_SESSION["Cust_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
@@ -75,6 +80,11 @@
                 <div class="inputBox">
                     <span class="details">Customer Password :</span>
                     <input type="text" id="Cust_Password" name="Cust_Password" value="<?php echo $row['Cust_Password'] ?>"><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <span class="details">Customer Phone Num :</span>
+                    <input type="text" id="Cust_PhoneNum" name="Cust_PhoneNum" value="<?php echo $row['Cust_PhoneNum'] ?>"><br><br>
                 </div>
             </div>
         <?php

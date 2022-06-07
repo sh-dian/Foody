@@ -6,7 +6,7 @@
         $uname= mysqli_real_escape_string($con, $_POST["username"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkID = mysqli_query($con, "SELECT Rider_ID FROM rider WHERE Rider_ID='$uname' AND Rider_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Rider_ID FROM rider WHERE Rider_PhoneNum='$uname' AND Rider_Password='$password' limit 1");
         
         if (mysqli_num_rows($checkID) > 0) {
 
@@ -31,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Form Rider</title>
     
-    <link rel="stylesheet" href="RLogin.css">
+    <link rel="stylesheet" href="CSS/riderLogin.css">
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -40,7 +40,7 @@
 
             <form action="#" method="post">
                     <div>
-                        <img src="logo.png" alt="Foody Logo" class="image">
+                        <img src="CSS/logo.png" alt="Foody Logo" class="image">
                         <h1>RIDER</h1>
                     </div>
                     

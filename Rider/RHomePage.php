@@ -14,11 +14,8 @@
     </head>
     <body>
 
-
-
         <!--RnavigationBar-->
         <?php include "./RnavigationBar.php" ?>
-
 
 
 
