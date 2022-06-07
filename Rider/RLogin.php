@@ -6,7 +6,7 @@
         $uname= mysqli_real_escape_string($con, $_POST["username"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkID = mysqli_query($con, "SELECT Rider_ID FROM rider WHERE Rider_ID='$uname' AND Rider_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Rider_ID FROM rider WHERE Rider_PhoneNum='$uname' AND Rider_Password='$password' limit 1");
         
         if (mysqli_num_rows($checkID) > 0) {
 

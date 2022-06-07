@@ -15,7 +15,8 @@ drop table if exists `RestaurantMenu`;
 -- Create table --
 
 CREATE TABLE `Admin`(
-    `Admin_ID` VARCHAR(10),
+    `Admin_ID` INT AUTO_INCREMENT,
+    `Admin_Username` VARCHAR(10),
     `Admin_Name` VARCHAR(100),
     `Admin_Password` VARCHAR(10),
     `Admin_Email` VARCHAR(50),
@@ -23,7 +24,7 @@ CREATE TABLE `Admin`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Customer`(
-    `Cust_ID` VARCHAR(10),
+    `Cust_ID` INT AUTO_INCREMENT,
     `Cust_Name` VARCHAR(100),
     `Cust_Password` VARCHAR(10),
     `Cust_Email` VARCHAR(50),
@@ -34,7 +35,7 @@ CREATE TABLE `Customer`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Rider`(
-    `Rider_ID` VARCHAR(10),
+    `Rider_ID` INT AUTO_INCREMENT,
     `Rider_Name` VARCHAR(100),
     `Rider_Password` VARCHAR(10),
     `Rider_PhoneNum` VARCHAR(12),
@@ -42,7 +43,7 @@ CREATE TABLE `Rider`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `RestaurantOwner`(
-    `RO_ID` VARCHAR(10),
+    `RO_ID` INT AUTO_INCREMENT,
     `RO_Name` VARCHAR(100),
     `RO_Password` VARCHAR(10),
     `RO_Email` VARCHAR(50),
@@ -53,7 +54,7 @@ CREATE TABLE `RestaurantOwner`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `Restaurant`(
-    `Rest_ID` VARCHAR(10),
+    `Rest_ID` INT AUTO_INCREMENT,
     `Rest_Name` VARCHAR(50),
     `Rest_PhoneNum` VARCHAR(12),
     `Rest_Address` VARCHAR(100),
@@ -64,14 +65,14 @@ CREATE TABLE `Restaurant`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `RiderCommission`(
-    `C_ID` VARCHAR(10),
+    `C_ID` INT AUTO_INCREMENT,
     `Rider_ID` VARCHAR(10),
     `C_TotalDeliveries` INT,
     `C_TotalCommission` DECIMAL(65,2)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `OrderRecord`(
-    `Order_ID` VARCHAR(10),
+    `Order_ID` INT AUTO_INCREMENT,
     `Cust_ID` VARCHAR(10),
     `Rest_ID` VARCHAR(10),
     `Rider_ID` VARCHAR(10),
@@ -83,7 +84,7 @@ CREATE TABLE `OrderRecord`(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `RestaurantMenu`(
-    `RM_ID` VARCHAR(10),
+    `RM_ID` INT AUTO_INCREMENT,
     `Rest_ID` VARCHAR(10),
     `RM_MenuName` VARCHAR(30),
     `RM_Description` VARCHAR(700),

@@ -11,8 +11,9 @@
             $adminName = mysqli_real_escape_string($con, $_POST["Cust_Name"]);
             $adminEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
             $adminPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
+            $custPhone = mysqli_real_escape_string($con, $_POST["Cust_PhoneNum"]);
 
-            $query = "UPDATE Admin SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password' WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}'";
+            $query = "UPDATE customer SET Cust_Name='$Cust_Name' , Cust_Email ='$Cust_Email', Cust_Password='$Cust_Password', Cust_PhoneNum = '$custPhone' , WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -75,6 +76,11 @@
                 <div class="inputBox">
                     <span class="details">Customer Password :</span>
                     <input type="text" id="Cust_Password" name="Cust_Password" value="<?php echo $row['Cust_Password'] ?>"><br><br>
+                </div>
+
+                <div class="inputBox">
+                    <span class="details">Customer Phone Num :</span>
+                    <input type="text" id="Cust_PhoneNum" name="Cust_PhoneNum" value="<?php echo $row['Cust_PhoneNum'] ?>"><br><br>
                 </div>
             </div>
         <?php
