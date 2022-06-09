@@ -14,12 +14,18 @@ INSERT INTO Customer (Cust_ID, Cust_Name, Cust_Password, Cust_Email, Cust_PhoneN
 INSERT INTO Customer (Cust_ID, Cust_Name, Cust_Password, Cust_Email, Cust_PhoneNum, Cust_Address, Cust_Poscode, Cust_State) 
     VALUES (2, 'Adriana Binti Addy', 'Rt2h01rt5s', 'magryz@gmail.com', '01589674856', '60 Ground Floor Plaza Damas Jalan Sri Hartamas 1,', '50480', 'Kuala Lumpur');
 
+INSERT INTO Customer (Cust_ID, Cust_Name, Cust_Password, Cust_Email, Cust_PhoneNum, Cust_Address, Cust_Poscode, Cust_State) 
+    VALUES (3, 'Zarith', 'jafjd678S', 'Zarith@gmail.com', '01987256423', 'No. 19 Lorong Utara C, Petaling Jaya', '46200', 'Selangor');
+
 -- Rider Data --
 INSERT INTO Rider (Rider_ID, Rider_Name, Rider_Password, Rider_PhoneNum, Rider_DeliveryArea) 
     VALUES (1, 'Zarith Bin Naufal', 'Gsrhtr5h4r', '01285967489', 'Petaling Jaya');
 
 INSERT INTO Rider (Rider_ID, Rider_Name, Rider_Password, Rider_PhoneNum, Rider_DeliveryArea) 
     VALUES (2, 'Syameen Binti Amri', 'Hgrths215g', '01354892356', 'Wilayah Persekutuan');
+
+INSERT INTO Rider (Rider_ID, Rider_Name, Rider_Password, Rider_PhoneNum, Rider_DeliveryArea) 
+    VALUES (3, 'Thanajufri Bin Naufal', 'CSfvsfs23', '01283247489', 'Petaling Jaya');
 
 -- Restaurant Owner Data --
 INSERT INTO RestaurantOwner (RO_ID, RO_Name, RO_Password, RO_Email, RO_PhoneNum, RO_Address, RO_Poscode, RO_State) 

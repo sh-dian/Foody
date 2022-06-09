@@ -8,7 +8,7 @@ const myChart = new Chart(ctx, {
         labels: ['Selangor', 'Kuala Lumpur'],
         datasets: [{
             label: 'Total User',
-            data: [1, 1],
+            data: [2, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -33,7 +33,7 @@ const myChart2 = new Chart(ctx2, {
         labels: ['Petaling Jaya', 'Kuala Lumpur'],
         datasets: [{
             label: 'Total User',
-            data: [1, 1],
+            data: [2, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

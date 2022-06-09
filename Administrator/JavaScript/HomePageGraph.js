@@ -7,7 +7,7 @@ const myChart = new Chart(ctx, {
         labels: ['Customer','Restaurant Owner', 'Rider'],
         datasets: [{
             label: '# of Votes',
-            data: [2, 2, 2],
+            data: [3, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
