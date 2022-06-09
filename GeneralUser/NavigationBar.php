@@ -55,7 +55,7 @@
             </li>
 
             <li>
-                <a href="CalculationExpense.php">
+                <a href="Expenses.php">
                     <i class='bx bx-cog' id="setting"></i>
                     <span class="links">Expenses</span>
                 </a>

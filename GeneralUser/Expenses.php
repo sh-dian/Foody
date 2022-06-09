@@ -41,7 +41,7 @@
 
     <div class="flexbox">
         <div class="card">       
-            <h2>Total User</h2>
+            <h2>Total Order</h2>
             <?php         
                 $query = "SELECT Order_ID FROM orderrecord ORDER BY Order_ID";  
                 $query_run = mysqli_query($con, $query);
@@ -51,7 +51,7 @@
         </div>
 
         <div class="card">       
-            <h2>Total Restaurant</h2>
+            <h2>Money Spent</h2>
             <?php         
                 $query = "SELECT Order_ID FROM orderrecord ORDER BY Order_ID";  
                 $query_run = mysqli_query($con, $query);
@@ -60,15 +60,6 @@
             ?>
         </div>
 
-        <div class="card">       
-            <h2>Total Profit</h2>
-            <?php         
-                $query = "SELECT Order_ID FROM orderrecord ORDER BY Order_ID";  
-                $query_run = mysqli_query($con, $query);
-                $row = mysqli_num_rows($query_run);
-                echo '<h1>' .$row. '</h1>';
-            ?>
-        </div>
     </div>
 
     <div>

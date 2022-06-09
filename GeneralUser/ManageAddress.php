@@ -39,8 +39,8 @@
     
     <?php 
                 
-                        $query1 = "SELECT * FROM customer";
-                        $result = mysqli_query($con, $query1);
+                $query = "SELECT * FROM customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
+                        $result = mysqli_query($con, $query);
             ?>
 
                         <table border="1px" style="width: 70%; line-height:30px;">

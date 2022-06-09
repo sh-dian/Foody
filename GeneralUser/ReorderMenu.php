@@ -38,8 +38,8 @@
     
     <?php 
                 
-                        $query1 = "SELECT * FROM orderrecord";
-                        $result = mysqli_query($con, $query1);
+                $query = "SELECT * FROM orderrecord WHERE Order_ID = '1' ";
+                        $result = mysqli_query($con, $query);
             ?>
 
                         <table border="1px" style="width: 70%; line-height:30px;">
