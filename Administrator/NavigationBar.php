@@ -47,11 +47,11 @@
             </li>
 
             <li>
-                <a href="CalculationMenu.php">
-                    <i class='bx bx-money-withdraw'></i>
-                    <span class="links">Financial</span>
+                <a href="Report.php">
+                    <i class='bx bxs-report'></i>
+                    <span class="links">Report</span>
                 </a>
-                <span class="tooltip">Financial</span>            
+                <span class="tooltip">Report</span>            
             </li>
 
             <li>

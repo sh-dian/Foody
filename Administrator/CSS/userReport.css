@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600');
+
+html { overflow-y: scroll; overflow-x:scroll; }
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    padding-top: 2%;
+    padding-left: 10%;
+  }
+  
+  h1 i{
+    padding-right: 2%;
+  }
+
+.card{
+    box-shadow: 0 7px 10px #A3BBCB;
+    width: 320px;
+    border-radius: 16px;
+    margin-top: 3%;
+    margin-left: 5%;
+    padding: 2%;
+  }
+  
+  .flexbox{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .graphBox1{
+    margin-left: 8%;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 200px;
+  }
+  
+  .graphBox1 .box{
+    position: relative;
+    width : 75%;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 7px 10px #A3BBCB;
+  }
+
+  /*
+  .graphBox{
+    margin-left: 12%;
+    position: relative;
+    width: 100%;
+    padding-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 200px;
+  }
+
+  .graphBox .box{
+    position: relative;
+    width : 80%;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 7px 10px #A3BBCB;
+  }*/

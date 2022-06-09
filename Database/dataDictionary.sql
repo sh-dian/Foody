@@ -12,7 +12,7 @@ INSERT INTO Customer (Cust_ID, Cust_Name, Cust_Password, Cust_Email, Cust_PhoneN
     VALUES (1, 'Chen', 'Sf0df2g168', 'sewepo6071@gmail.com', '01158962356', 'No. 7 Lorong Utara B, Petaling Jaya', '46200', 'Selangor');
 
 INSERT INTO Customer (Cust_ID, Cust_Name, Cust_Password, Cust_Email, Cust_PhoneNum, Cust_Address, Cust_Poscode, Cust_State) 
-    VALUES (2, 'Adriana Binti Addy', 'Rt2h01rt5s', 'magryz@gmail.com', '01589674856', '60 Ground Floor Plaza Damas Jalan Sri Hartamas 1,', '50480', 'Wilayah Persekutuan Kuala Lumpur');
+    VALUES (2, 'Adriana Binti Addy', 'Rt2h01rt5s', 'magryz@gmail.com', '01589674856', '60 Ground Floor Plaza Damas Jalan Sri Hartamas 1,', '50480', 'Kuala Lumpur');
 
 -- Rider Data --
 INSERT INTO Rider (Rider_ID, Rider_Name, Rider_Password, Rider_PhoneNum, Rider_DeliveryArea) 
@@ -26,7 +26,7 @@ INSERT INTO RestaurantOwner (RO_ID, RO_Name, RO_Password, RO_Email, RO_PhoneNum,
     VALUES (1, 'Aisyah Binti Zamri', 'Vfsd58124f', 'r13san@gmail.com', '01485724589', 'Subang Square E 08 3 Jln Ss 15/4E Ss15 Petaling Jaya,', '47500', 'Selangor');
 
 INSERT INTO RestaurantOwner (RO_ID, RO_Name, RO_Password, RO_Email, RO_PhoneNum, RO_Address, RO_Poscode, RO_State) 
-    VALUES (2, 'Dzulkarnain Bin Dzulhisham', 'Bgdf457dfr', 'ivanovsergey77@gmail.com', '01625487423', ' Lg Plaza Phoenix Jln Cheras Km 10,', '50480', 'Wilayah Persekutuan Kuala Lumpur');
+    VALUES (2, 'Dzulkarnain Bin Dzulhisham', 'Bgdf457dfr', 'ivanovsergey77@gmail.com', '01625487423', ' Lg Plaza Phoenix Jln Cheras Km 10,', '50480', 'Kuala Lumpur');
 
 -- Restaurant Data --
 INSERT INTO Restaurant (Rest_ID, RO_ID, Rest_Name, Rest_PhoneNum, Rest_Address, Rest_Poscode, Rest_State, Rest_OpeningHour, Rest_ClosedHour) 
