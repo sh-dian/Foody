@@ -39,11 +39,19 @@
             </li>
 
             <li>
-                <a href="UpdateMenu.php">
-                    <i class='bx bx-data'></i>
+                <a href="AddMenu.php">
+                    <i class='bx bxs-food-menu'></i>
                     <span class="links">Add New Menu</span>
                 </a>
                 <span class="tooltip">Add New Menu</span>            
+            </li>
+
+            <li>
+                <a href="Report.php">
+                    <i class='bx bxs-report'></i>
+                    <span class="links">Report</span>
+                </a>
+                <span class="tooltip">Report</span>            
             </li>
 
             <li>

@@ -6,29 +6,28 @@
         header("Location: Login.php");
     }
     else{
+        if(isset($_POST["Update"])){
 
-      if(isset($_POST["Add_Data"])){
-          $name = mysqli_real_escape_string($con, $_POST["name"]);
-          $price = mysqli_real_escape_string($con, $_POST["price"]);
-          $description = mysqli_real_escape_string($con, $_POST["description"]);
-    
+            $ROMenu = mysqli_real_escape_string($con, $_POST["RM_MenuName"]);
+            $RODescription = mysqli_real_escape_string($con, $_POST["RM_Description"]);
+            $ROPrice = mysqli_real_escape_string($con, $_POST["RM_Price"]);
 
-          $query= "INSERT INTO restaurantmenu(RM_MenuName,RM_Price,RM_Description) VALUES('$name','$price','$description')";
-          $result = mysqli_query($con,$query);
+            $query = "UPDATE restaurantmenu SET RO_MenuName='$ROMenu' , RO_Description ='$RODescription', RO_Price='$ROPrice' WHERE RO_PhoneNum = '{$_SESSION["RO_Login"]}'";
+            $result = mysqli_query($con, $query);
+            
+            if($result){
+                echo "
+                <script>
+                    alert('Updated Success!');
+                    window.location = 'HomePage.php';
+                </script>";
 
-          if($result){
-              echo "
-              <script>
-                  alert('Menu Added Success!');
-                  window.location = 'UserList.php';
-              </script>";
-
-          }else{
-              echo "<script>alert('Menu Added FAILED');</script>";
-              echo $con->error;
-          }
-      }
-  }
+            }else{
+                echo "<script>alert('Updated FAILED');</script>";
+                echo $con->error;
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -37,46 +36,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Menu</title>
+    <title>Update Menu</title>
 
-    <link rel="stylesheet" href="CSS/UpdateMenu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <link rel="stylesheet" href="CSS/UpdateMenu.css"/>
 
 </head>
 <body>
     <!-- Navigation Bar -->
     <?php include "./Navigationbar.php" ?>
-    
-    <div class="flexbox">
-        <div class="title"><h1>Add New Menu</h1></div>
 
-        <form action="" method="post">
-            <div class="newMenu">
+    <h1>Update Menu</h1>
 
-                <div class="inputBox">
-                    <span class="details">Food Name</span>
-                    <input class="input1" type="text" name="name" placeholder="Enter food name" required>
-                </div>
+    <form action="" method="post">
+        <?php
+            $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '{$_SESSION["RO_ID"]}' ";
+            $result = mysqli_query($con, $query);
 
-                <div class="inputBox">
-                    <span class="details">Price</span>
-                    <input class="input1" type="text" name="price" placeholder="Enter Price" required>
-                </div>
+            if(mysqli_num_rows($result) > 0){
+                while($row = mysqli_fetch_assoc($result)){
+        ?>
+
+        <div class="UpdateProfile">
 
                 <div class="inputBox">
-                    <span class="details">Description</span>
-                    <input class="input1" type="text" name="description" placeholder="Description" required>
+                    <span class="details">Menu Name :</span>
+                    <input type="text" id="RM_MenuName" name="RM_MenuName" value="<?php echo $row['RM_MenuName'] ?>" ><br><br>
                 </div>
+                
+                <div class="inputBox">
+                    <span class="details">Description :</span>
+                    <input type="text" id="RM_Description" name="RM_Description" value="<?php echo $row['RM_Description'] ?>" ><br><br>
+                </div>
+                
+                <div class="inputBox">
+                    <span class="details">Price :</span>
+                    <input type="text" id="RM_Price" name="RM_Price" value="<?php echo $row['RM_Price'] ?>"><br><br>
+                </div>
+        </div>
 
+        <?php
+                }
+            }
+        ?>    
 
-            </div>
-
-            <div class="button">
-                <button name="Add_Menu" type="submit" value="Add Menu" class="button">Add Menu</button>
-            </div>
-
-        </form>
-    </div>
-
+<button type="submit" class="btn" name="Update">Update Profile</button>
+    </form>
 </body>
 </html>

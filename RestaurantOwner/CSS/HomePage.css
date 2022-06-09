@@ -56,16 +56,9 @@ h1 i{
   padding: 2%;
 }
 
-.flexbox{
-  margin: 0%;
-  padding: 0%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-body{
+table{
     margin-left: 10%;
     margin-top: 5%;
     padding: 2%;
-    height: 3000px;
+    height: 10%;
 }
