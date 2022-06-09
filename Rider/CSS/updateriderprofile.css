@@ -12,20 +12,21 @@ form{
     margin-top: 3%;
 }
 
-form .ROProfile .inputBox{
+form .updateProfile .inputBox{
     padding-left: 10rem;
 }
 
-.ROProfile .inputBox .details{
+.updateProfile .inputBox .details{
     margin-bottom: 5px;
 }
 
-.ROProfile .inputBox input{
+.updateProfile .inputBox input{
     padding-left: 1rem;
     font-size: 16px;
     width: 50%;
-    background: transparent;
-    border: none;
+    padding-left: 1rem;
+    border: 1.5px solid #AD886E;
+    border-radius: 1rem;
 }
 
 button{
