@@ -71,9 +71,7 @@
 
             </div>
 
-            <div class="button">
-                <button name="Add_Menu" type="submit" value="Add Menu" class="button">Add Menu</button>
-            </div>
+            <button type="submit" class="btn" name="Add_Data">Add Menu</button>
 
         </form>
     </div>

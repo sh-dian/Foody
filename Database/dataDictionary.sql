@@ -29,11 +29,11 @@ INSERT INTO RestaurantOwner (RO_ID, RO_Name, RO_Password, RO_Email, RO_PhoneNum,
     VALUES (2, 'Dzulkarnain Bin Dzulhisham', 'Bgdf457dfr', 'ivanovsergey77@gmail.com', '01625487423', ' Lg Plaza Phoenix Jln Cheras Km 10,', '50480', 'Wilayah Persekutuan Kuala Lumpur');
 
 -- Restaurant Data --
-INSERT INTO Restaurant (Rest_ID, Rest_Name, Rest_PhoneNum, Rest_Address, Rest_Poscode, Rest_State, Rest_OpeningHour, Rest_ClosedHour) 
-    VALUES (1, 'River View Seafood Restaurant', '03-3289 2238 ', 'No 1, Jalan Besar Pasir Penambang', '45000', 'Selangor', '2007-11-30 10:30:19', '2007-11-30 10:30:19');
+INSERT INTO Restaurant (Rest_ID, RO_ID, Rest_Name, Rest_PhoneNum, Rest_Address, Rest_Poscode, Rest_State, Rest_OpeningHour, Rest_ClosedHour) 
+    VALUES (1, 1, 'River View Seafood Restaurant', '03-3289 2238 ', 'No 1, Jalan Besar Pasir Penambang', '45000', 'Selangor', '2007-11-30 10:30:19', '2007-11-30 10:30:19');
 
-INSERT INTO Restaurant (Rest_ID, Rest_Name, Rest_PhoneNum, Rest_Address, Rest_Poscode, Rest_State, Rest_OpeningHour, Rest_ClosedHour) 
-    VALUES (2, ' Marble 8 Steak House & Fine Dining Restaurant in KL', '03-2386 6030', ' Level 56, Menara 3 Petronas Persiaran KLCC, Kuala Lumpur City Centre,', '50088', 'Kuala Lumpur', '2007-11-30 10:30:19', '2007-11-30 10:30:19');
+INSERT INTO Restaurant (Rest_ID, RO_ID, Rest_Name, Rest_PhoneNum, Rest_Address, Rest_Poscode, Rest_State, Rest_OpeningHour, Rest_ClosedHour) 
+    VALUES (2, 2, ' Marble 8 Steak House & Fine Dining Restaurant in KL', '03-2386 6030', ' Level 56, Menara 3 Petronas Persiaran KLCC, Kuala Lumpur City Centre,', '50088', 'Kuala Lumpur', '2007-11-30 10:30:19', '2007-11-30 10:30:19');
 
 -- Rider Commission --
 INSERT INTO RiderCommission (C_ID, Rider_ID, C_TotalDeliveries, C_TotalCommission) 

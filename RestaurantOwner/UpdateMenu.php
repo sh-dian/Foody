@@ -79,7 +79,7 @@
             }
         ?>    
 
-<button type="submit" class="btn" name="Update">Update Profile</button>
+<button type="submit" class="btn" name="Update">Update Menu</button>
     </form>
 </body>
 </html>
