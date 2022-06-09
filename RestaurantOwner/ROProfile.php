@@ -22,7 +22,7 @@
     <!-- Navigation Bar -->
     <?php include "./Navigationbar.php" ?>
 
-    <h1>Admin Profile</h1>
+    <h1>Restaurant Owner Profile</h1>
 
     <form action="" method="post">
         <?php

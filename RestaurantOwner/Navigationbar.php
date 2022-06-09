@@ -41,9 +41,9 @@
             <li>
                 <a href="UpdateMenu.php">
                     <i class='bx bx-data'></i>
-                    <span class="links">Update Menu</span>
+                    <span class="links">Add New Menu</span>
                 </a>
-                <span class="tooltip">Update Menu</span>            
+                <span class="tooltip">Add New Menu</span>            
             </li>
 
             <li>

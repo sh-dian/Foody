@@ -37,13 +37,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Menu</title>
+    <title>Add New Menu</title>
 
-    <link rel="stylesheet" href="CSS/addUser.css">
+    <link rel="stylesheet" href="CSS/UpdateMenu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
 
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <?php include "./Navigationbar.php" ?>
     
     <div class="flexbox">
         <div class="title"><h1>Add New Menu</h1></div>
