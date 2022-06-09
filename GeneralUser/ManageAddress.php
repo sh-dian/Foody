@@ -31,10 +31,7 @@
 
 
     <div class="bar">
-        <form action="" class="search-bar">
-            <input type="text" placeholder="search" name="searchBar">
-            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+        
 
         <h1><i class="fa-solid fa-chart-line"></i>Your Address</h1>
     </div>
