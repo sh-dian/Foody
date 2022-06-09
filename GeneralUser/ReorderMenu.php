@@ -38,8 +38,8 @@
     
     <?php 
                 
-                        $query1 = "SELECT * FROM orderrecord";
-                        $result = mysqli_query($con, $query1);
+                $query = "SELECT * FROM orderrecord WHERE Order_ID = '1' ";
+                        $result = mysqli_query($con, $query);
             ?>
 
                         <table border="1px" style="width: 70%; line-height:30px;">
@@ -76,8 +76,7 @@
                                             <td style="padding: 0 1rem">'.$totalprice.'</td>
 
                                             <td style="padding: 0 1rem">
-                                                <button><a href= "UpdateMenu.php?viewid='.$orderID.'">Update</a></button>
-                                                <button><a href= "DeleteMenu.php?deleteid='.$orderID.'">Delete</a></button>
+                                                <button><a href= "UpdateReorder.php?viewid='.$orderID.'">Update</a></button>
                                             </td>
                                         </tr>';
                                     }

@@ -39,8 +39,8 @@
     
     <?php 
                 
-                        $query1 = "SELECT * FROM customer";
-                        $result = mysqli_query($con, $query1);
+                $query = "SELECT * FROM customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
+                        $result = mysqli_query($con, $query);
             ?>
 
                         <table border="1px" style="width: 70%; line-height:30px;">
@@ -59,6 +59,7 @@
                                 if ($result->num_rows > 0) {
                                     // output data of each row
                                     while($row = $result->fetch_assoc()) {
+                                        $ID = $row['Cust_ID'];
                                         $state = $row['Cust_State'];
                                         $address = $row['Cust_Address'];
                                         $postcode = $row['Cust_Poscode'];
@@ -71,8 +72,8 @@
                                             <td style="padding: 0 1rem">'.$postcode.'</td>
 
                                             <td style="padding: 0 1rem">
-                                                <button><a href= "UpdateMenu.php?viewid='.$state.'">Update</a></button>
-                                                <button><a href= "DeleteMenu.php?deleteid='.$state.'">Delete</a></button>
+                                                <button><a href= "UpdateAddress.php?viewid='.$ID.'">Update</a></button>
+                                                <button><a href= "DeleteAddress.php?deleteid='.$ID.'">Delete</a></button>
                                             </td>
                                         </tr>';
                                     }
