@@ -1,29 +1,90 @@
-<!DOCTYPE HTML>
-<html>
+<?php
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
+    session_start();
+
+    if(!isset($_SESSION["Cust_login"])){
+        header("Location: Login.php");
+    }
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reorder Menu</title>
+
+    <link rel="stylesheet" href="CSS/address.css"/>
+    <style>
+        body{
+            margin-left: 2%;
+            padding: 2%;
+        }
+    </style>
+
+</head>
 <body>
+    <!-- Navigation Bar -->
+    <?php include "./Navigationbar.php" ?>
 
-<?php
-echo "<h1 style=Past Orders</h1>";
-?>
-<?php
-echo "<h2>River View Seafood Restaurant</h2>";
-?>
-<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F03%2F26%2Fseafood-boil-FT-RECIPE0321.jpg" width="200" height="200">
 
-<?php
-echo "<p>Tomyam Seafood</p>";
-echo "<p>12/5/2022</p>";
-echo "<p>RM 10.00</p>";
-echo "<h2>Marble 8 Steak House & Fine Dining Restaurant</h2>";
-?>
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Beef_fillet_steak_with_mushrooms.jpg" width="200" height="200">
+    <div class="bar">
 
-<?php
-echo "<p>Premium beef steak</p>";
-echo "<p>23/5/2022</p>";
-echo "<p>RM 75.00"
-?>
+        <h1><i class="fa-solid fa-chart-line"></i>Order History</h1>
+    </div>
 
+    
+    <?php 
+                
+                        $query1 = "SELECT * FROM orderrecord";
+                        $result = mysqli_query($con, $query1);
+            ?>
+
+                        <table border="1px" style="width: 70%; line-height:30px;">
+                            <tr>
+                                <th colspan=6><h2>MENU HISTORY</h2></th>
+                            </tr>
+
+                            <t>
+                                <th>Order ID</th>
+                                <th>Delivery Time</th>
+                                <th>Menu List</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                
+                            </t>
+
+                            <?php
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $orderID = $row['Order_ID'];
+                                        $deliverytime = $row['Order_DeliveryTime'];
+                                        $menulist = $row['Order_MenuName'];
+                                        $quantity = $row['Order_Quantity'];
+                                        $totalprice = $row['Order_Total'];
+
+                                        
+                                        echo 
+                                        '<tr>
+                                            <td style="padding: 0 1rem">'.$orderID.'</td>
+                                            <td style="padding: 0 1rem">'.$deliverytime.'</td>
+                                            <td style="padding: 0 1rem">'.$menulist.'</td>
+                                            <td style="padding: 0 1rem">'.$quantity.'</td>
+                                            <td style="padding: 0 1rem">'.$totalprice.'</td>
+
+                                            <td style="padding: 0 1rem">
+                                                <button><a href= "UpdateMenu.php?viewid='.$orderID.'">Update</a></button>
+                                                <button><a href= "DeleteMenu.php?deleteid='.$orderID.'">Delete</a></button>
+                                            </td>
+                                        </tr>';
+                                    }
+                                }
+                            ?>
+
+                        </table><br><br>
 
 
 
