@@ -12,15 +12,15 @@ form{
     margin-top: 3%;
 }
 
-form .adminProfile .inputBox{
+form .custProfile .inputBox{
     padding-left: 10rem;
 }
 
-.adminProfile .inputBox .details{
+.custProfile .inputBox .details{
     margin-bottom: 5px;
 }
 
-.adminProfile .inputBox input{
+.custProfile .inputBox input{
     padding-left: 1rem;
     font-size: 16px;
     width: 50%;
