@@ -5,6 +5,7 @@
     if(!isset($_SESSION["Cust_login"])){
         header("Location: Login.php");
     }
+    
 ?>
 
 <!DOCTYPE html>
@@ -13,55 +14,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Address</title>
+    <title>User Address</title>
 
+    <link rel="stylesheet" href="CSS/address.css"/>
+    <style>
+        body{
+            margin-left: 2%;
+            padding: 2%;
+        }
+    </style>
 
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.php" ?>
+    <?php include "./Navigationbar.php" ?>
 
-    <h1>Manage Address</h1>
 
-    <form action="" method="post">
-        <?php
-            $query = "SELECT * FROM Customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_PhoneNum"]}' ";
-            $result = mysqli_query($con, $query);
+    <div class="bar">
+        <form action="" class="search-bar">
+            <input type="text" placeholder="search" name="searchBar">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
 
-            if(mysqli_num_rows($result) > 0){
-                while($row = mysqli_fetch_assoc($result)){
-        ?>
+        <h1><i class="fa-solid fa-chart-line"></i>Your Address</h1>
+    </div>
 
-        <div class="userAddress">
-
-                <div class="inputBox">
-                    <span class="details">Customer Name :</span>
-                    <input type="tezt" id="cust_name" name="cust_name" value="<?php echo $row['Cust_Name'] ?>" disabled required><br><br>
-                </div>
+    
+    <?php 
                 
-                <div class="inputBox">
-                    <span class="details">Customer Address :</span>
-                    <input type="text" id="cust_Address" name="cust_Address" value="<?php echo $row['Cust_Address'] ?>" disabled required><br><br>
-                </div>
-                
-                <div class="inputBox">
-                    <span class="details">Customer Poscode :</span>
-                    <input type="email" id="cust_Poscode" name="cust_Poscode" value="<?php echo $row['Cust_Poscode'] ?>" disabled required><br><br>
-                </div>
+                        $query1 = "SELECT * FROM customer";
+                        $result = mysqli_query($con, $query1);
+            ?>
 
-                <div class="inputBox">
-                    <span class="details">Customer State :</span>
-                    <input type="password" id="cust_state" name="cust_state" value="<?php echo $row['Cust_State'] ?>" disabled required><br><br>
-                </div>
-        </div>
+                        <table border="1px" style="width: 70%; line-height:30px;">
+                            <tr>
+                                <th colspan=6><h2>ADDRESS</h2></th>
+                            </tr>
 
-        <?php
-                }
-            }
-        ?>    
-    </form>
+                            <t>
+                                <th>State </th>
+                                <th>Address</th>
+                                <th>PostCode</th>
+                                
+                            </t>
 
-    <a href="UpdateCustomerAddress.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
+                            <?php
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $state = $row['Cust_State'];
+                                        $address = $row['Cust_Address'];
+                                        $postcode = $row['Cust_Poscode'];
+
+                                        
+                                        echo 
+                                        '<tr>
+                                            <td style="padding: 0 1rem">'.$state.'</td>
+                                            <td style="padding: 0 1rem">'.$address.'</td>
+                                            <td style="padding: 0 1rem">'.$postcode.'</td>
+
+                                            <td style="padding: 0 1rem">
+                                                <button><a href= "UpdateMenu.php?viewid='.$state.'">Update</a></button>
+                                                <button><a href= "DeleteMenu.php?deleteid='.$state.'">Delete</a></button>
+                                            </td>
+                                        </tr>';
+                                    }
+                                }
+                            ?>
+
+                        </table><br><br>
+
+
 
 </body>
 </html>

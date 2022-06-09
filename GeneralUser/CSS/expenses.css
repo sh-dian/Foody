@@ -63,9 +63,22 @@ h1 i{
   flex-wrap: wrap;
   justify-content: center;
 }
-body{
-    margin-left: 10%;
-    margin-top: 5%;
-    padding: 2%;
-    height: 3000px;
+
+.graphBox{
+  margin-left: 9%;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-top: 5%;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  min-height: 200px;
+}
+
+.graphBox .box{
+  position: relative;
+  width : 80%;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 7px 10px #A3BBCB;
 }
