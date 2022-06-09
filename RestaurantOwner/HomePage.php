@@ -48,7 +48,7 @@
 
                         <table border="1px" style="width: 70%; line-height:30px;">
                             <tr>
-                                <th colspan=6><h2>MENU</h2></th>
+                                <th colspan=4><h2>MENU</h2></th>
                             </tr>
 
                             <t>

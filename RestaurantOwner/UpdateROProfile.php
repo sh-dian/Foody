@@ -103,9 +103,11 @@
                 }
             }
         ?>    
+
+<button type="submit" class="btn" name="Update">Update Profile</button>
     </form>
 
-    <a href="UpdateROProfile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
+    
 
 </body>
 </html>
