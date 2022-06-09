@@ -3,12 +3,14 @@
 html { overflow-y: scroll; overflow-x:hidden; }
 
 body{
+  margin-left: 10%;
+  margin-top: 3%;
     font-family: 'Poppins', sans-serif;
 }
 
 h1{
   margin-left: 10%;
-    margin-top: 3%;
+  margin-top: 3%;
 }
 /*
 form{
@@ -32,9 +34,7 @@ form{
   flex-wrap: wrap;
   justify-content: center;
 }
-body{
-    margin-left: 10%;
-    margin-top: 5%;
-    padding: 2%;
-    height: 3000px;
+table{
+  margin-left: 10%;
+  margin-top: 3%;
 }
