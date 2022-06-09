@@ -58,6 +58,7 @@ CREATE TABLE `RestaurantOwner`(
 
 CREATE TABLE `Restaurant`(
     `Rest_ID` INT AUTO_INCREMENT,
+    `RO_ID` INT,
     `Rest_Name` VARCHAR(50),
     `Rest_PhoneNum` VARCHAR(12),
     `Rest_Address` VARCHAR(100),
@@ -111,6 +112,9 @@ ALTER TABLE `OrderRecord`
 ALTER TABLE `OrderRecord`
     ADD KEY `Rest_ID` (`Rest_ID`);
 
+ALTER TABLE `Restaurant`
+    ADD KEY `RO_ID` (`RO_ID`);
+
 -- Constraint and Foreign Key --
 
 ALTER TABLE `RestaurantMenu`
@@ -124,4 +128,7 @@ ALTER TABLE `OrderRecord`
 
 ALTER TABLE `OrderRecord`
     ADD CONSTRAINT `fk3_OrderRecord_ibfk_1` FOREIGN KEY (`Rest_ID`) REFERENCES `Restaurant`(`Rest_ID`);
+
+ALTER TABLE `Restaurant`
+    ADD CONSTRAINT `Restaurant_ibfk_1` FOREIGN KEY (`Rest_ID`) REFERENCES `RestaurantOwner`(`RO_ID`);
 COMMIT;
