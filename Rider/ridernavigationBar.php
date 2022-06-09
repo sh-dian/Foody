@@ -20,10 +20,12 @@
 
             <i class='bx bx-menu' id="butn"></i>
         </div>
-
+        <?php
+            if(isset($_SESSION['login_rider']))
+        ?>
         <ul class="navigation">
             <li>
-                <a href="RProfil.php">
+                <a href="riderprofile.php">
                     <i class='bx bx-user-circle'></i>
                     <span class="links">Profile</span>
                 </a>
@@ -31,7 +33,15 @@
             </li>
 
             <li>
-                <a href="RCommission.php">
+                <a href="Delivery.php">
+                    <i class='bx bx-carbon-delivery'></i>
+                    <span class="links">Delivery</span>
+                </a>
+                <span class="tooltip">Delivery</span>            
+            </li>
+
+            <li>
+                <a href="ridercommission.php">
                     <i class='bx bx-money-withdraw'></i>
                     <span class="links">Commission</span>
                 </a>
@@ -39,7 +49,7 @@
             </li>
 
             <li>
-                <a href="RHistory.php">
+                <a href="riderhistory.php">
                     <i class='bx bx-cog' id="history"></i>
                     <span class="links">History</span>
                 </a>
@@ -47,7 +57,7 @@
             </li>
 
             <li>
-                <a href="RLogin.php">
+                <a href="riderlogin.php">
                     <i class='bx bx-log-out-circle' id="logout"></i>
                     <span class="links">Logout</span>
                 </a>

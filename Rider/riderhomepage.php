@@ -14,8 +14,8 @@
     </head>
     <body>
 
-        <!--RnavigationBar-->
-        <?php include "./RnavigationBar.php" ?>
+        <!--ridernavigationBar-->
+        <?php include "./ridernavigationBar.php" ?>
 
 
 
