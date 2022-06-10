@@ -14,7 +14,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Rider Commission</title>
+    <title>Rider Delivery</title>
 
 </head>
 <body>
@@ -22,7 +22,7 @@
     <?php include "./ridernavigationBar.php" ?>
     <div style="padding-left: 50px;">
 
-    <h1>Rider Commission</h1>
+    <h1>Rider Delivery</h1>
 
     <form action="" method="post">
         <?php
@@ -33,7 +33,7 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-<div class="RiderProfile" style="padding-left: 130px;">
+<div class="RiderDelivery" style="padding-left: 130px;">
 
 <div class="inputBox">
     <span class="details">Order_ID :</span>
