@@ -12,7 +12,7 @@
             $ROEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
             $ROPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
 
-            $query = "UPDATE customer SET Cust_Name='$CustName' , Cust_Email ='$CustEmail', Cust_Password='$CustPass' WHERE Cust_PhoneNum = '{$_SESSION["Cust_Login"]}'";
+            $query = "UPDATE customer SET Cust_Name='$CustName' , Cust_Email ='$CustEmail', Cust_Password='$CustPass' WHERE Cust_ID = '{$_SESSION["Cust_Login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){

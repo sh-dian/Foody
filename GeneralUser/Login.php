@@ -13,7 +13,7 @@
 
             $row = mysqli_fetch_assoc($checkEmail);
 
-            $_SESSION["Cust_login"] = $row['Cust_PhoneNum'];
+            $_SESSION["Cust_login"] = $row['Cust_ID'];
 
             header("Location: HomePage.php");
 
