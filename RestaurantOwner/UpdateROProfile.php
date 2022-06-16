@@ -11,8 +11,11 @@
             $ROName = mysqli_real_escape_string($con, $_POST["RO_Name"]);
             $ROEmail = mysqli_real_escape_string($con, $_POST["RO_Email"]);
             $ROPass = mysqli_real_escape_string($con, $_POST["RO_pass"]);
+            $ROAddress = mysqli_real_escape_string($con, $_POST["RO_Address"]);
+            $ROPoscode = mysqli_real_escape_string($con, $_POST["RO_Poscode"]);
+            $ROState = mysqli_real_escape_string($con, $_POST["RO_State"]);
 
-            $query = "UPDATE restaurantowner SET RO_Name='$ROName' , RO_Email ='$ROEmail', RO_Password='$ROPass' WHERE RO_ID = '{$_SESSION["RO_Login"]}'";
+            $query = "UPDATE restaurantowner SET RO_Name='$ROName' , RO_Email ='$ROEmail', RO_Password='$ROpass',  RO_Address='$ROAddress', RO_Poscode='$ROPoscode', RO_State='$ROState' WHERE RO_ID = '{$_SESSION["RO_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -38,7 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Owner Profile</title>
 
-    <link rel="stylesheet" href="CSS/UpdateROProfile.css"/>
+    <link rel="stylesheet" href="CSS/updateROProfile.css"/>
 
 </head>
 <body>
@@ -49,18 +52,18 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM restaurantowner WHERE RO_PhoneNum = '{$_SESSION["RO_login"]}' ";
+            $query = "SELECT * FROM restaurantowner WHERE RO_ID = '{$_SESSION["RO_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="UpdateProfile">
+        <div class="updateProfile">
 
                 <div class="inputBox">
                     <span class="details">Restaurant Owner ID :</span>
-                    <input type="tezt" id="RO_id" name="RO_id" value="<?php echo $row['RO_ID'] ?>" ><br><br>
+                    <input type="text" id="RO_id" name="RO_id" value="<?php echo $row['RO_ID'] ?>" ><br><br>
                 </div>
                 
                 <div class="inputBox">

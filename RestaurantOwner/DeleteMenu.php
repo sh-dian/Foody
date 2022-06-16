@@ -8,10 +8,10 @@
 
     }else{
 
-        if(isset($_GET['deleteid'])){
-            $id = $_GET['deleteid'];
+        if(isset($_GET['RM_ID'])){
+            $id = $_GET['RM_ID'];
 
-            $query = "DELETE FROM restaurantmenu WHERE RM_ID='{$_SESSION["RO_Login"]}' ";
+            $query = "DELETE FROM restaurantmenu WHERE RM_ID= $id ";
             $result = mysqli_query($con,$query);
         
             if($result){

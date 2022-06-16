@@ -8,9 +8,9 @@
     else{
         if(isset($_POST["Update"])){
 
-            $ROMenu = mysqli_real_escape_string($con, $_POST["RM_MenuName"]);
-            $RODescription = mysqli_real_escape_string($con, $_POST["RM_Description"]);
-            $ROPrice = mysqli_real_escape_string($con, $_POST["RM_Price"]);
+            $RMMenu = mysqli_real_escape_string($con, $_POST["RM_MenuName"]);
+            $RMDescription = mysqli_real_escape_string($con, $_POST["RM_Description"]);
+            $RMPrice = mysqli_real_escape_string($con, $_POST["RM_Price"]);
 
             $query = "UPDATE restaurantmenu SET RM_MenuName='$RMMenu' , RM_Description ='$RMDescription', RM_Price='$RMPrice' WHERE Rest_ID = '{$_SESSION["RO_login"]}'";
             $result = mysqli_query($con, $query);
@@ -72,6 +72,7 @@
                     <span class="details">Price :</span>
                     <input type="text" id="RM_Price" name="RM_Price" value="<?php echo $row['RM_Price'] ?>"><br><br>
                 </div>
+
         </div>
 
         <?php
