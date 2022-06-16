@@ -19,5 +19,12 @@
 
 
 
+        <?php
+        // include ('foody');
+
+        $sqlget = "SELECT * FROM orderrecord";
+        ?>
+
+
     </body>
     </html>

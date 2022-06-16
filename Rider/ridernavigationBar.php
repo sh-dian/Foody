@@ -33,8 +33,8 @@
             </li>
 
             <li>
-                <a href="Delivery.php">
-                    <i class='bx bx-carbon-delivery'></i>
+                <a href="riderhomepage.php">
+                    <i class='bx bx-package'></i>
                     <span class="links">Delivery</span>
                 </a>
                 <span class="tooltip">Delivery</span>            

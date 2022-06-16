@@ -31,10 +31,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rider Login</title>
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 </head>
 <body>
 
-    <div class="container">
+    <div class="container text-center">
 
         <div class="form-container">
             <form action="#" method="post">
@@ -54,10 +56,6 @@
                 <div class="inputBox">
                     <input type="password" name="password" placeholder="Enter Password" required>
                     <div class="icon"><i class="fa-solid fa-user-lock"></i></div>
-                </div>
-    
-                <div class="forgotLink">
-                    <a href="#" target="_blank">Forgot Password ?</a>
                 </div>
     
                 <input type="submit" value="Login" class="button" name="login">

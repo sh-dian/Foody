@@ -40,7 +40,7 @@
 
                 <div class="inputBox">
                     <span class="details">ID :</span>
-                    <input type="tezt" id="Rider_ID" name="Rider_ID" value="<?php echo $row['Rider_ID'] ?>" disabled required><br><br>
+                    <input type="text" id="Rider_ID" name="Rider_ID" value="<?php echo $row['Rider_ID'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">
@@ -71,6 +71,10 @@
             ?>    
     </form>
     <a href="updateriderprofile.php"><button type="submit" name="send" value="Edit" class="button">Edit</button></a>
+    <form action="deleteriderprofile.php">
+    <input type="text" id="Rider_ID" name="Rider_ID" value="<?php echo $row['Rider_ID'] ?>" hidden>
+    <button type="submit" class="buttondelete">Delete Account</button>
+    </form>
 
 </div>
 </body>
