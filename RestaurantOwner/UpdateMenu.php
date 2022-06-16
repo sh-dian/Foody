@@ -12,7 +12,7 @@
             $RODescription = mysqli_real_escape_string($con, $_POST["RM_Description"]);
             $ROPrice = mysqli_real_escape_string($con, $_POST["RM_Price"]);
 
-            $query = "UPDATE restaurantmenu SET RO_MenuName='$ROMenu' , RO_Description ='$RODescription', RO_Price='$ROPrice' WHERE RO_PhoneNum = '{$_SESSION["RO_Login"]}'";
+            $query = "UPDATE restaurantmenu SET RO_MenuName='$ROMenu' , RO_Description ='$RODescription', RO_Price='$ROPrice' WHERE RO_ID = '{$_SESSION["RO_Login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){

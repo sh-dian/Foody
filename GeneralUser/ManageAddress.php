@@ -39,7 +39,7 @@
     
     <?php 
                 
-                $query = "SELECT * FROM customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
+                $query = "SELECT * FROM customer WHERE Cust_ID = '{$_SESSION["Cust_login"]}' ";
                         $result = mysqli_query($con, $query);
             ?>
 

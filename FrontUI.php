@@ -16,7 +16,7 @@
             exit();
         }
         else if($getType === 'Administrator'){
-            header ("location: Administrator\Page\Login.php");
+            header ("location: Administrator\Login.php");
             exit();
         }
     }
@@ -38,7 +38,7 @@
     <div class="flexbox">
         <div class="main">
             <div class="logo">
-                <img src="Administrator/HTML_PHP/CSS/logo.png" alt="Foody Logo">
+                <img src="Administrator/CSS/logo.png" alt="Foody Logo">
             </div>
 
             <form action="#" method="post">

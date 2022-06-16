@@ -26,7 +26,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM restaurantowner WHERE RO_PhoneNum = '{$_SESSION["RO_login"]}' ";
+            $query = "SELECT * FROM restaurantowner WHERE RO_ID = '{$_SESSION["RO_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
