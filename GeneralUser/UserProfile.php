@@ -13,16 +13,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
+    <title>Admin Profile</title>
 
     <link rel="stylesheet" href="CSS/userProfile.css"/>
 
 </head>
 <body>
     <!-- Navigation Bar -->
-    <?php include "./Navigationbar.php" ?>
+    <?php include "./NavigationBar.php" ?>
 
-    <h1>User Profile</h1>
+    <h1>Admin Profile</h1>
 
     <form action="" method="post">
         <?php
@@ -33,33 +33,27 @@
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="custProfile">
+        <div class="UserProfile">
 
                 <div class="inputBox">
-                    <span class="details">Customer ID :</span>
-                    <input type="tezt" id="Cust_ID" name="Cust_ID" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
+                    <span class="details">User ID :</span>
+                    <input type="tezt" id="cust_id" name="cust_id" value="<?php echo $row['Cust_ID'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">
-                    <span class="details">Customer Name :</span>
-                    <input type="text" id="Cust_Name" name="Cust_Name" value="<?php echo $row['Cust_Name'] ?>" disabled required><br><br>
+                    <span class="details">User Name :</span>
+                    <input type="text" id="cust_Name" name="cust_Name" value="<?php echo $row['Cust_Name'] ?>" disabled required><br><br>
                 </div>
                 
                 <div class="inputBox">
-                    <span class="details">Customer Email :</span>
-                    <input type="email" id="Cust_Email" name="Cust_Email" value="<?php echo $row['Cust_Email'] ?>" disabled required><br><br>
+                    <span class="details">User Email :</span>
+                    <input type="email" id="cust_Email" name="cust_Email" value="<?php echo $row['Cust_Email'] ?>" disabled required><br><br>
                 </div>
 
                 <div class="inputBox">
-                    <span class="details">Password :</span>
-                    <input type="password" id="Cust_Password" name="Cust_Password" value="<?php echo $row['Cust_Password'] ?>" disabled required><br><br>
+                    <span class="details">User Password :</span>
+                    <input type="password" id="cust_pass" name="cust_pass" value="<?php echo $row['Cust_Password'] ?>" disabled required><br><br>
                 </div>
-
-                <div class="inputBox">
-                    <span class="details">Phone Number :</span>
-                    <input type="text" id="Cust_PhoneNum" name="Cust_PhoneNum" value="<?php echo $row['Cust_PhoneNum'] ?>" disabled required><br><br>
-                </div>
-                
         </div>
 
         <?php

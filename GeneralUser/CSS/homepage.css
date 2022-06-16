@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600');
+
+html { overflow-y: scroll; overflow-x:hidden; }
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-bar{
+  width: 30%;
+  max-width: 700%;
+  background-color: beige;
+  border: 1px solid black;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin-left: 5%;
+}
+
+.search-bar input{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 5px;
+}
+
+.search-bar button{
+  border: 0;
+  border-radius: 50%;
+  background: none;
+}
+
+.search-bar button i{
+  font-size: 25px;
+  min-width: 50px;
+  text-align: center;
+}
+
+h1{
+  padding-top: 2%;
+  padding-left: 6%;
+}
+
+h1 i{
+  padding-right: 2%;
+}
+
+.card{
+  box-shadow: 0 7px 10px #A3BBCB;
+  width: 320px;
+  border-radius: 16px;
+  margin-top: 3%;
+  margin-left: 5%;
+  padding: 2%;
+}
+
+table{
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 2%;
+    height: 10%;
+}

@@ -5,6 +5,7 @@
     if(!isset($_SESSION["Cust_login"])){
         header("Location: FrontUI.php");
     }
+    
 ?>
 
 <!DOCTYPE html>
@@ -13,61 +14,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Home</title>
+    <title>User Dashboard</title>
 
-    <link rel="stylesheet" href="Theme/userHome.css">
-
-    <script src="JavaScript/function.js"></script>
-    <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="CSS/homepage.css"/>
     <style>
         body{
-            margin-left: 15%;
+            margin-left: 5%;
             padding: 5%;
         }
     </style>
-    
-</head>
-<body> 
 
+</head>
+<body>
     <!-- Navigation Bar -->
-    <?php include "./NavigationBar.php" ?>
-    
-    <section class="featured-restaurants">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <div class="title-block pull-left">
-                            <h1>Featured Restaurants</h1> </div>
-                    </div>
-                    
-                </div>
-    
-                <div class="row">
+    <?php include "./Navigationbar.php" ?>
+
+    <div id="main-content">
+            <div id="search-section">
+                <form method="POST" action="#">
+                    <input type="text" name="search-restaurant" id="search-bar" placeholder="Enter Restaurant Name Here"/>
+                    <select id="categorize" class="btn" name="categorize">
+                        <option value="none" class="btn" selected disable hidden>Categorized By<i class="fa-solid fa-circle-chevron-down"></i></option>
+                        <option value="" class="btn"></option>
+                        <option value="1" >Local Restaurant</option>
+                        <option value="2" >Western Restaurant</option>
+                        <option value="3" >Vegeterian Restaurant</option>
+                    </select>
+                    <button type="submit" class="btn" id="search-button" name="search">Search</button>
+                </form>
+            </div>
+
+            <br/><br/>
+            <h2>Top Restaurant</h2>
+            <br/>
+
+            <div id="popular-restaurant" class="restaurant-list">
+
+
+
+            <div class="row">
                     <div class="restaurant-listing">
                         
 						
 						<?php  
-						$query = "SELECT * FROM restaurant";
-                        $ress = mysqli_query($con, $query);
-                        
+						$ress= mysqli_query($con,"select * from restaurant");  
 									      while($rows=mysqli_fetch_array($ress))
 										  {
 													
-													$query= mysqli_query($con ,"select * from restaurant where Rest_ID='".$rows['Rest_ID']."' ");
+													$query= mysqli_query($con,"select * from restaurant where Rest_ID='".$rows['Rest_ID']."' ");
 													 $rowss=mysqli_fetch_array($query);
 						
-													 echo $rowss['Rest_Name'];
-                                                     echo '<br>';
-                                                     echo $rowss['Rest_Address'];
-                                                     echo '<br>';
-                                                     echo $rowss['Rest_PhoneNum'];
-                                                     echo '<br>';
-                                                     echo $rowss['Rest_OpeningHour'];
-                                                     echo '<br>';
-                                                     echo $rowss['Rest_ClosedHour'];
-
-                                                     echo '<br><br>';
+													 echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all '.$rowss['Rest_Name'].'">
+														<div class="restaurant-wrap">
+															<div class="row">
+																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
+																	<a class="restaurant-logo" href="dishes.php?res_id='.$rows['Rest_ID'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo"> </a>
+																</div>
+													
+																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
+																	<h5><a href="dishes.php?res_id='.$rows['Rest_ID'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
+																</div>
+													
+															</div>
+												
+														</div>
+												
+													</div>';
 										  }
 						
 						
@@ -78,9 +90,4 @@
 					
                     </div>
                 </div>
-     
-               
-            </div>
-                                        </section>
-</body>
-</html>
+

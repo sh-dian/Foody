@@ -8,11 +8,11 @@
     else{
         if(isset($_POST["Update"])){
 
-            $ROName = mysqli_real_escape_string($con, $_POST["Cust_Name"]);
-            $ROEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
-            $ROPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
+            $CustName = mysqli_real_escape_string($con, $_POST["Cust_Name"]);
+            $CustEmail = mysqli_real_escape_string($con, $_POST["Cust_Email"]);
+            $CustPass = mysqli_real_escape_string($con, $_POST["Cust_Password"]);
 
-            $query = "UPDATE customer SET Cust_Name='$CustName' , Cust_Email ='$CustEmail', Cust_Password='$CustPass' WHERE Cust_ID = '{$_SESSION["Cust_Login"]}'";
+            $query = "UPDATE customer SET Cust_Name='$CustName' , Cust_Email ='$CustEmail', Cust_Password='$CustPass' WHERE Cust_ID = '{$_SESSION["Cust_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -49,7 +49,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
+            $query = "SELECT * FROM customer WHERE Cust_ID = '{$_SESSION["Cust_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
