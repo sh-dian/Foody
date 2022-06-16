@@ -34,34 +34,20 @@
     $result6 = $conn->query($sat);
     $result7 = $conn->query($sun);
 
-    // $monarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Monday'";
-    // $moncol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Monday'";
-    // $tuearr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Tuesday'";
-    // $tuecol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Tuesday'";
-    // $wedarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Wednesday'";
-    // $wedcol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Wednesday'";
-    // $thuarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Thursday'";
-    // $thucol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Thursday'";
-    // $friarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Friday'";
-    // $fricol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Friday'";
-    // $satarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Saturday'";
-    // $satcol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Saturday'";
-    // $sunarr = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Arrived' AND DAYNAME(date_goods_arrive) = 'Sunday'";
-    // $suncol = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE goods_status = 'Collected' AND DAYNAME(date_goods_collected) = 'Sunday'";
-    // $result15 = $conn->query($monarr);
-    // $result16 = $conn->query($moncol);
-    // $result17 = $conn->query($tuearr);
-    // $result18 = $conn->query($tuecol);
-    // $result19 = $conn->query($wedarr);
-    // $result20 = $conn->query($wedcol);
-    // $result21 = $conn->query($thuarr);
-    // $result22 = $conn->query($thucol);
-    // $result23 = $conn->query($friarr);
-    // $result24 = $conn->query($fricol);
-    // $result25 = $conn->query($satarr);
-    // $result26 = $conn->query($satcol);
-    // $result27 = $conn->query($sunarr);
-    // $result28 = $conn->query($suncol);
+    $moncom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Monday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $tuecom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Tuesday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $wedcom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Wednesday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $thucom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Thursday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $fricom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Friday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $satcom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Saturday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $suncom = "SELECT IFNULL((SELECT SUM(Order_DeliveryFee) FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Sunday' AND Rider_ID = '$riderid'), 0) AS Order_DeliveryFee";
+    $result8 = $conn->query($moncom);
+    $result9 = $conn->query($tuecom);
+    $result10 = $conn->query($wedcom);
+    $result11 = $conn->query($thucom);
+    $result12 = $conn->query($fricom);
+    $result13 = $conn->query($satcom);
+    $result14 = $conn->query($suncom);
 
     // if ($result = mysqli_query($conn,$monkk1)){
     //     $rowcount = mysqli_num_rows($result);
@@ -104,21 +90,21 @@
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Day'],
+                ['Day', 'Orders'],
                 
-                ['Monday', <?php while ($row1 = $result1->fetch_assoc()) { echo "$row1[Order_ID]"; } ?>],
-                ['Tuesday', <?php while ($row2 = $result2->fetch_assoc()) { echo "$row2[Order_ID]"; } ?>],
-                ['Wednesday', <?php while ($row3 = $result3->fetch_assoc()) { echo "$row3[Order_ID]"; } ?>],
-                ['Thursday', <?php while ($row4 = $result4->fetch_assoc()) { echo "$row4[Order_ID]"; } ?>],
-                ['Friday', <?php while ($row5 = $result5->fetch_assoc()) { echo "$row5[Order_ID]"; } ?>],
-                ['Saturday', <?php while ($row6 = $result6->fetch_assoc()) { echo "$row6[Order_ID]"; } ?>],
-                ['Sunday', <?php while ($row7 = $result7->fetch_assoc()) { echo "$row7[Order_ID]"; } ?>]
+                ['Mon', <?php while ($row1 = $result1->fetch_assoc()) { echo "$row1[Order_ID]"; } ?>],
+                ['Tue', <?php while ($row2 = $result2->fetch_assoc()) { echo "$row2[Order_ID]"; } ?>],
+                ['Wed', <?php while ($row3 = $result3->fetch_assoc()) { echo "$row3[Order_ID]"; } ?>],
+                ['Thu', <?php while ($row4 = $result4->fetch_assoc()) { echo "$row4[Order_ID]"; } ?>],
+                ['Fri', <?php while ($row5 = $result5->fetch_assoc()) { echo "$row5[Order_ID]"; } ?>],
+                ['Sat', <?php while ($row6 = $result6->fetch_assoc()) { echo "$row6[Order_ID]"; } ?>],
+                ['Sun', <?php while ($row7 = $result7->fetch_assoc()) { echo "$row7[Order_ID]"; } ?>]
             ]);
 
             var options = {
                 chart: {
-                    title: 'Parcel Arrival',
-                    subtitle: 'Arrivals and address throughout a week',
+                    title: 'Orders Delivered',
+                    subtitle: 'Orders Delivered throughout a week',
                 }
             };
 
@@ -127,7 +113,7 @@
             chart.draw(data, google.charts.Bar.convertOptions(options));
         }
     </script>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         google.charts.load('current', {
             'packages': ['bar']
         });
@@ -135,28 +121,28 @@
 
         function drawChart() {
             var data = google.visualization.arrayToDataTable([
-                ['Day', 'Arrived', 'Collected'],
+                ['Day', 'Commission'],
                 
-                ['Monday', <?php //while ($row15 = $result15->fetch_assoc()) { echo "$row15[Order_ID]"; } ?>, <?php //while ($row16 = $result16->fetch_assoc()) { echo "$row16[Order_ID]"; } ?>],
-                ['Tuesday', <?php //while ($row17 = $result17->fetch_assoc()) { echo "$row17[Order_ID]"; } ?>, <?php //while ($row18 = $result18->fetch_assoc()) { echo "$row18[Order_ID]"; } ?>],
-                ['Wednesday', <?php //while ($row19 = $result19->fetch_assoc()) { echo "$row19[Order_ID]"; } ?>, <?php //while ($row20 = $result20->fetch_assoc()) { echo "$row20[Order_ID]"; } ?>],
-                ['Thursday', <?php //while ($row21 = $result21->fetch_assoc()) { echo "$row21[Order_ID]"; } ?>, <?php //while ($row22 = $result22->fetch_assoc()) { echo "$row22[Order_ID]"; } ?>],
-                ['Friday', <?php //while ($row23 = $result23->fetch_assoc()) { echo "$row23[Order_ID]"; } ?>, <?php //while ($row24 = $result24->fetch_assoc()) { echo "$row24[Order_ID]"; } ?>],
-                ['Saturday', <?php //while ($row25 = $result25->fetch_assoc()) { echo "$row25[Order_ID]"; } ?>, <?php //while ($row26 = $result26->fetch_assoc()) { echo "$row26[Order_ID]"; } ?>],
-                ['Sunday', <?php //while ($row27 = $result27->fetch_assoc()) { echo "$row27[Order_ID]"; } ?>, <?php //while ($row28 = $result28->fetch_assoc()) { echo "$row28[Order_ID]"; } ?>]
+                ['Mon', <?php while ($row8 = $result8->fetch_assoc()) { echo "$row8[Order_DeliveryFee]"; } ?>],
+                ['Tue', <?php while ($row9 = $result9->fetch_assoc()) { echo "$row9[Order_DeliveryFee]"; } ?>],
+                ['Wed', <?php while ($row10 = $result10->fetch_assoc()) { echo "$row10[Order_DeliveryFee]"; } ?>],
+                ['Thu', <?php while ($row11 = $result11->fetch_assoc()) { echo "$row11[Order_DeliveryFee]"; } ?>],
+                ['Fri', <?php while ($row12 = $result12->fetch_assoc()) { echo "$row12[Order_DeliveryFee]"; } ?>],
+                ['Sat', <?php while ($row13 = $result13->fetch_assoc()) { echo "$row13[Order_DeliveryFee]"; } ?>],
+                ['Sun', <?php while ($row14 = $result14->fetch_assoc()) { echo "$row14[Order_DeliveryFee]"; } ?>]
             ]);
 
             var options = {
                 chart: {
-                    title: 'Parcel Status',
-                    subtitle: 'Arrived and Collected throughout a week',
+                    title: 'Total Commissions Gained',
+                    subtitle: 'Commissions throughout a week',
                 }
             };
 
             var chart = new google.charts.Bar(document.getElementById('columnchart_material2'));
 
             chart.draw(data, google.charts.Bar.convertOptions(options));
-        } -->
+        }
     </script>
 
     <p class="lead text-center text-muted">Report</p>

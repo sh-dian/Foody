@@ -17,7 +17,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
     $riderid = $_SESSION["Rider_login"];
-    $sql = "SELECT * FROM orderrecord O, restaurant E, customer C WHERE '$riderid' = O.Rider_ID AND O.Rest_ID = E.Rest_ID AND O.Cust_ID = C.Cust_ID";
+    $sql = "SELECT * FROM orderrecord O, restaurant E, customer C WHERE '$riderid' = O.Rider_ID AND O.Rest_ID = E.Rest_ID AND O.Cust_ID = C.Cust_ID AND Order_DeliveryTime IS NOT NULL";
     $result = $conn->query($sql);
 ?>
 
