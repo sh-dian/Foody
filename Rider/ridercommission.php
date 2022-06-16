@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Rider_login"])){
-        header("Location: FrontUI.php");
+        header("Location: riderlogin.php");
     }
 
     $servername = "localhost";
@@ -17,7 +17,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $riderid = $_SESSION["Rider_id"];
+    $riderid = $_SESSION["Rider_login"];
 
     $mon = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Monday'";
     $tue = "SELECT COUNT(*) AS Order_ID FROM orderrecord WHERE DAYNAME(Order_DeliveryTime) = 'Tuesday'";
@@ -91,7 +91,7 @@
     
     <div class="ml-5">
     <div class="container pt-4">
-    <h1>Delivery History</h1>
+    <!-- <h1>Delivery History</h1> -->
     <div class="ml-4">
 
     

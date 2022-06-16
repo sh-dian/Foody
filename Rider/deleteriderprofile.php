@@ -1,9 +1,14 @@
-<?php session_start();
+<?php
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
+    session_start();
+
+    if(!isset($_SESSION["Rider_login"])){
+        header("Location: riderlogin.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>
    <head>
-        <title>HTML Meta Tag</title>
         <meta http-equiv = "refresh" content = "2; url = riderlogin.php" />
         <style>
             .alert {
@@ -30,20 +35,8 @@
    </head>
    <body>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "foody";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        }
-
         $sql = "DELETE FROM rider
-        WHERE Rider_ID = '{$_SESSION["Rider_login"]}'
+        WHERE Rider_PhoneNum = '{$_SESSION["Rider_login"]}'
         ";
         // $query = $mysqli->query($sql);
 
