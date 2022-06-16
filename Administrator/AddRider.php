@@ -3,18 +3,18 @@
     session_start();
 
     if(!isset($_SESSION["adminLogin"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
     else{
-        /*
+
         if(isset($_POST["Add_Data"])){
             $name = mysqli_real_escape_string($con, $_POST["name"]);
             $pass = mysqli_real_escape_string($con, $_POST["pass"]);
             $email = mysqli_real_escape_string($con, $_POST["email"]);
             $phoneNum = mysqli_real_escape_string($con, $_POST["phoneNum"]);
-            $address = mysqli_real_escape_string($con, $_POST["address"]);
+            $area = mysqli_real_escape_string($con, $_POST["area"]);
 
-            $query= "INSERT INTO customer(Cust_Name,Cust_Password,Cust_Email,Cust_PhoneNum,Cust_Address) VALUES('$name','$pass','$email','$phoneNum','$address')";
+            $query= "INSERT INTO rider(Rider_Name,Rider_Password, Rider_PhoneNum, Rider_DeliveryArea) VALUES('$name','$pass','$phoneNum','$area')";
             $result = mysqli_query($con,$query);
 
             if($result){
@@ -29,7 +29,7 @@
                 echo $con->error;
             }
         }
-        */
+        
     }
 ?>
 
@@ -39,7 +39,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add User</title>
+    <title>Add Restaurant Owner</title>
 
     <link rel="stylesheet" href="CSS/addUser.css">
 
@@ -49,7 +49,7 @@
 <body>
     
     <div class="flexbox">
-        <div class="title"><h1>Add New User</h1></div>
+        <div class="title"><h1>Add New Rider</h1></div>
 
         <form action="" method="post">
             <div class="newUser">
@@ -65,18 +65,13 @@
                 </div>
 
                 <div class="inputBox">
-                    <span class="details">Email</span>
-                    <input class="input1" type="text" name="email" placeholder="Enter Email" required>
-                </div>
-
-                <div class="inputBox">
                     <span class="details">Phone Number</span>
                     <input class="input1" type="text" name="phoneNum" placeholder="Enter Phone Number" required>
                 </div>
 
                 <div class="inputBox">
-                    <span class="details">Address</span>
-                    <input class="input3" type="text" name="address" placeholder="Enter full address" required>
+                    <span class="details">Delivery Area</span>
+                    <input class="input1" type="text" name="area" placeholder="Enter Delivery Area" required>
                 </div>
 
             </div>

@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["adminLogin"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
 ?>
 
@@ -54,9 +54,20 @@
         </form>
     </div>
 
-        <form action="AddUserProfile.php">
-            <button type="submit" name="send" value="Edit" class="button">Add New User</button> <br><br>
+    <div class="flexbox">
+        <form action="AddUser.php">
+            <button type="submit" name="send" value="Edit" class="button1">Add New User</button>
         </form>
+
+        <form action="AddRider.php">
+            <button type="submit" name="send" value="Edit" class="button1">Add New Rider</button>
+        </form>
+
+        <form action="AddRO.php">
+            <button type="submit" name="send" value="Edit" class="button1">Add New Restaurant Owner</button> <br><br>
+        </form>
+
+    </div>
 
     <hr><br>
 
@@ -71,7 +82,7 @@
 
                         <table border="1px" style="width: 70%; line-height:30px;">
                             <tr>
-                                <th colspan=6><h2>Customer Account</h2></th>
+                                <th colspan=8><h2>Customer Account</h2></th>
                             </tr>
 
                             <t>
@@ -80,6 +91,8 @@
                                 <th>Name</th>
                                 <th>Phone Number</th>
                                 <th>Address</th>
+                                <th>Poscode</th>
+                                <th>State</th>
                                 <th>Menu</th>
                             </t>
 
@@ -92,6 +105,8 @@
                                         $name = $row['Cust_Name'];
                                         $phone = $row['Cust_PhoneNum'];
                                         $address = $row['Cust_Address'];
+                                        $poscode = $row['Cust_Poscode'];
+                                        $state = $row['Cust_State'];
                                         
                                         echo 
                                         '<tr>
@@ -100,6 +115,8 @@
                                             <td style="padding: 0 1rem">'.$name.'</td>
                                             <td style="padding: 0 1rem">'.$phone.'</td>
                                             <td style="padding: 0 1rem">'.$address.'</td>
+                                            <td style="padding: 0 1rem">'.$poscode.'</td>
+                                            <td style="padding: 0 1rem">'.$state.'</td>
                                             <td style="padding: 0 1rem">
                                                 <button><a href= "UpdateCustomer.php?viewid='.$id.'">Update</a></button>
                                                 <button><a href= "DeleteCustomer.php?deleteid='.$id.'">Delete</a></button>
@@ -166,7 +183,7 @@
             ?>
                         <table border="1px" style="width: 70%; line-height:30px;">
                             <tr>
-                                <th colspan=7><h2>Restaurant Owner Account</h2></th>
+                                <th colspan=9><h2>Restaurant Owner Account</h2></th>
                             </tr>
 
                             <t>
@@ -176,6 +193,8 @@
                                 <th>Phone Number</th>
                                 <th>Email</th>
                                 <th>Address</th>
+                                <th>Poscode</th>
+                                <th>State</th>
                                 <th>Menu</th>
                             </t>
 
@@ -189,6 +208,8 @@
                                         $phone = $row['RO_PhoneNum'];
                                         $email = $row['RO_Email'];
                                         $address = $row['RO_Address'];
+                                        $poscode = $row['RO_Poscode'];
+                                        $state = $row['RO_State'];
                                         
                                         echo
                                         '<tr>
@@ -198,6 +219,8 @@
                                             <td style="padding: 0 1rem">'.$phone.'</td>
                                             <td style="padding: 0 1rem">'.$email.'</td>
                                             <td style="padding: 0 1rem">'.$address.'</td>
+                                            <td style="padding: 0 1rem">'.$poscode.'</td>
+                                            <td style="padding: 0 1rem">'.$state.'</td>
                                             <td style="padding: 0 1rem">
                                                 <button><a href= "UpdateOwner.php?viewid='.$id.'">Update</a></button>
                                                 <button><a href= "DeleteOwner.php?deleteid='.$id.'">Delete</a></button>

@@ -43,7 +43,7 @@
         }
 
         $sql = "DELETE FROM rider
-        WHERE Rider_PhoneNum = '{$_SESSION["Rider_login"]}'
+        WHERE Rider_ID = '{$_SESSION["Rider_login"]}'
         ";
         // $query = $mysqli->query($sql);
 

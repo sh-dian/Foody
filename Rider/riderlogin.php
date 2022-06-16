@@ -13,7 +13,7 @@
 
             $row = mysqli_fetch_assoc($checkEmail);
 
-            $_SESSION["Rider_login"] = $row['Rider_PhoneNum'];
+            $_SESSION["Rider_login"] = $row['Rider_ID'];
 
             header("Location: riderhomepage.php");
 

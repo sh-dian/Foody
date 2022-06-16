@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Rider_login"])){
-        header("Location: riderlogin.php");
+        header("Location: FrontUI.php");
     }
 
     $servername = "localhost";

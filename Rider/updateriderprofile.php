@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Rider_login"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
     else{
         if(isset($_POST["Update"])){
@@ -11,7 +11,7 @@
             $RiderName = mysqli_real_escape_string($con, $_POST["Rider_Name"]);
             $RiderPass = mysqli_real_escape_string($con, $_POST["Rider_Password"]);
 
-            $query = "UPDATE rider SET Rider_Name='$RiderName', Rider_Password='$RiderPass' WHERE Rider_PhoneNum = '{$_SESSION["Rider_login"]}'";
+            $query = "UPDATE rider SET Rider_Name='$RiderName', Rider_Password='$RiderPass' WHERE Rider_ID = '{$_SESSION["Rider_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -50,7 +50,7 @@
 
     <form action="" method="post"  style="padding-left: 130px;">
         <?php
-            $query = "SELECT * FROM rider WHERE Rider_PhoneNum = '{$_SESSION["Rider_login"]}' ";
+            $query = "SELECT * FROM rider WHERE Rider_ID = '{$_SESSION["Rider_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){

@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["adminLogin"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
 ?>
 
@@ -30,8 +30,8 @@
             <?php         
                 $query = "SELECT Cust_ID FROM customer ORDER BY Cust_ID";  
                 $query_run = mysqli_query($con, $query);
-                $row = mysqli_num_rows($query_run);
-                echo '<h1 style="text-align:center">' .$row. '</h1>';
+                $row1 = mysqli_num_rows($query_run);
+                echo '<h1 style="text-align:center">' .$row1. '</h1>';
             ?>
         </div>
 
@@ -40,18 +40,18 @@
             <?php         
                 $query = "SELECT Rider_ID FROM rider ORDER BY Rider_ID";  
                 $query_run = mysqli_query($con, $query);
-                $row = mysqli_num_rows($query_run);
-                echo '<h1 style="text-align:center">' .$row. '</h1>';
+                $row2 = mysqli_num_rows($query_run);
+                echo '<h1 style="text-align:center">' .$row2. '</h1>';
             ?>
         </div>
 
         <div class="card">       
             <h2 style="text-align:center">Total Restaurant Owner</h2>
             <?php         
-                $query = "SELECT Rest_ID FROM restaurant ORDER BY Rest_ID";  
+                $query = "SELECT RO_ID FROM restaurantowner ORDER BY RO_ID";  
                 $query_run = mysqli_query($con, $query);
-                $row = mysqli_num_rows($query_run);
-                echo '<h1 style="text-align:center">' .$row. '</h1>';
+                $row3 = mysqli_num_rows($query_run);
+                echo '<h1 style="text-align:center">' .$row3. '</h1>';
             ?>
         </div>
     </div>
@@ -68,6 +68,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
+
     <script src="JavaScript/UserReportGraph.js"></script>
 
 </body>
