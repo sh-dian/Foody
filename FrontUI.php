@@ -8,7 +8,7 @@
             exit();
         }
         else if($getType === 'Rider'){
-            header ("location: Rider\Login.php");
+            header ("location: Rider/riderlogin.php");
             exit();
         }
         else if($getType === 'Restaurant Owner'){
