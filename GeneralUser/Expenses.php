@@ -53,7 +53,7 @@
         <div class="card">       
             <h2>Money Spent</h2>
             <?php         
-                $query = "SELECT Order_ID FROM orderrecord ORDER BY Order_ID";  
+                $query = "SELECT Order_ID FROM orderrecord ORDER BY Order_Total";  
                 $query_run = mysqli_query($con, $query);
                 $row = mysqli_num_rows($query_run);
                 echo '<h1>' .$row. '</h1>';
