@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(admin.svg);
+    background-repeat: no-repeat;
+    background-size: 53%;
+    font-size: 14px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.image{
+    width: 65%;
+    margin-left: 20%;
+    margin-top: 0;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.container{
+    width: 30%;
+    margin-left: 37%;
+    margin-top: 2%;
+    padding: 1rem 2rem 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+
+    box-shadow: 0 0 50px lightgray;
+    border-radius: 10rem 0 10rem 0;
+    background: #243f4d;
+}
+
+.form-container{
+    position: relative;
+    height: 100%;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+form .inputBox{
+    height: 50px;
+    width: 60%;
+    position: relative;
+    margin-top: 15px;
+  }
+
+.inputBox input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 45px;
+    transition: all 0.3s ease;
+
+    text-align: center;
+    border: 1.5px solid #AD886E;
+    border-radius: 2rem;
+}
+
+.inputBox input:focus{
+    border: 2px solid #243f4d;
+}
+  
+.inputBox .icon{
+    position: absolute;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #436372;
+}
+
+.forgotLink{
+    padding-top: 1rem;
+}
+
+.forgotLink a{
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.forgotLink a:hover{
+    color: #AD886E;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.button{
+    margin-top: 15px;
+    width: 8rem;
+    height: 2.5rem;
+    border: 1px solid black;
+    color: white;
+    border-radius: 3rem;
+    background: #AD886E;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    background: #436372;
+    color: white;
+}

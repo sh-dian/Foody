@@ -1,4 +1,5 @@
-USE foody;
+--USE epiz_31973551_foody;--
+USE foody
 
 -- Admin Data --
 INSERT INTO Admin (Admin_ID, Admin_Name, Admin_Password, Admin_Email, Admin_PhoneNum) 

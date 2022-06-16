@@ -1,0 +1,17 @@
+body{
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 0;
+    height: 3000px;
+}
+
+.flexbox{
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button1{
+    margin-right: 10px;
+}

@@ -1,3 +1,7 @@
+--DROP DATABASE IF EXISTS epiz_31973551_foody;--
+--CREATE DATABASE epiz_31973551_foody;--
+--USE epiz_31973551_foody;--
+
 DROP DATABASE IF EXISTS foody;
 CREATE DATABASE foody;
 USE foody;

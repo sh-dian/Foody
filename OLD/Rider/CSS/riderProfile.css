@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+form{
+    margin-top: 3%;
+}
+
+form .ROProfile .inputBox{
+    padding-left: 10rem;
+}
+
+.ROProfile .inputBox .details{
+    margin-bottom: 5px;
+}
+
+.ROProfile .inputBox input{
+    padding-left: 1rem;
+    font-size: 16px;
+    width: 50%;
+    background: transparent;
+    border: none;
+}
+
+button{
+    margin-left:10rem;
+    padding: 0.5rem;
+}
+
+button{
+    height: 100%;
+    width: 10%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    color: white;
+    background: #AD886E;
+    text-transform: uppercase;
+}
+
+.buttondelete{
+    height: 100%;
+    width: 10%;
+    border: 1px solid black;
+    border-radius: 1rem;
+    color: white;
+    background: #ff0000;
+    text-transform: uppercase;
+}
+
+button:hover{
+    background: #243f4d;
+    color: white;
+}
