@@ -69,7 +69,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
-    <script src = "JavaScript/UserReportGraph.js"></script>
+    <script src = "JavaScript/Graph.js"></script>
     
 
 </body>

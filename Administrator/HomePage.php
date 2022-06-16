@@ -40,7 +40,8 @@
     </div>
 
     <div class="flexbox">
-        <div class="card">       
+        <div class="card"> 
+            <a href="UserReport.php" style="text-decoration:none; color:black;">      
             <h2 style="text-align:center">Total User</h2>
             <?php         
                 $query = "SELECT Rest_ID FROM restaurant ORDER BY Rest_ID";  
@@ -60,6 +61,7 @@
                 $result = $row1 + $row2 + $row3;
                 echo '<h1 style="text-align:center">' .$result. '</h1>';
             ?>
+            </a>
 
         </div>
 
@@ -71,9 +73,11 @@
                  $row = mysqli_num_rows($query_run);
                  echo '<h1 style="text-align:center">' .$row. '</h1>';
             ?>
+
         </div>
 
-        <div class="card">       
+        <div class="card">   
+        <a href="Profit.php" style="text-decoration:none; color:black;">        
             <h2 style="text-align:center">Total Profit</h2>
             <?php         
                 $query = "SELECT SUM(Order_Total)*0.10 As sum FROM orderrecord ";  
@@ -84,6 +88,7 @@
                 }
                 echo '<h1 style="text-align:center">RM ' .$output. '</h1>';
             ?>
+             </a>
         </div>
     </div>
 
@@ -109,7 +114,7 @@
 
 
     <div style="width: 80%; margin-left:8%;">
-        <canvas class="card" id="myChart"></canvas>
+        <a href="Profit.php"><canvas class="card" id="myChart"></canvas></a>
     </div>
  
     <script>
