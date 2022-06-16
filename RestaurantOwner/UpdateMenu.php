@@ -12,7 +12,7 @@
             $RODescription = mysqli_real_escape_string($con, $_POST["RM_Description"]);
             $ROPrice = mysqli_real_escape_string($con, $_POST["RM_Price"]);
 
-            $query = "UPDATE restaurantmenu SET RO_MenuName='$ROMenu' , RO_Description ='$RODescription', RO_Price='$ROPrice' WHERE RO_ID = '{$_SESSION["RO_Login"]}'";
+            $query = "UPDATE restaurantmenu SET RM_MenuName='$RMMenu' , RM_Description ='$RMDescription', RM_Price='$RMPrice' WHERE Rest_ID = '{$_SESSION["RO_login"]}'";
             $result = mysqli_query($con, $query);
             
             if($result){
@@ -38,7 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Menu</title>
 
-    <link rel="stylesheet" href="CSS/UpdateMenu.css"/>
+    <link rel="stylesheet" href="CSS/updateMenu.css"/>
 
 </head>
 <body>
@@ -49,14 +49,14 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '{$_SESSION["RO_ID"]}' ";
+            $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '{$_SESSION["RO_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){
                 while($row = mysqli_fetch_assoc($result)){
         ?>
 
-        <div class="UpdateProfile">
+        <div class="Menu">
 
                 <div class="inputBox">
                     <span class="details">Menu Name :</span>

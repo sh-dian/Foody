@@ -11,7 +11,7 @@
         if(isset($_GET['deleteid'])){
             $id = $_GET['deleteid'];
 
-            $query = "DELETE FROM restaurantmenu WHERE RM_MenuName ='$menu' ";
+            $query = "DELETE FROM restaurantmenu WHERE RM_ID='{$_SESSION["RO_Login"]}' ";
             $result = mysqli_query($con,$query);
         
             if($result){
