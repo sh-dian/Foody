@@ -34,10 +34,6 @@
             <div class="button">
                 <a href="Profit.php"><input name="send" type="submit" value="Profit Report" class="button"></a>
             </div>
-
-            <div class="button">
-                <a href="Commission.php"><input name="send" type="submit" value="Commission Report" class="button"></a>
-            </div>
         </div>
     </div>
 

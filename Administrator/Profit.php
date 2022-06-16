@@ -34,11 +34,11 @@
     <div class="card">       
             <h2 style="text-align:center">Total Profit</h2>
             <?php         
-                $query = "SELECT SUM(Order_Total) As sum FROM orderrecord ";  
+                $query = "SELECT SUM(Order_Total)*0.10 As sum FROM orderrecord ";  
                 $result = mysqli_query($con, $query);
 
                 while($row = $result->fetch_assoc()){
-                    $output = $row['sum'];
+                    $output = number_format($row['sum'],2);
                 }
                 echo '<h1 style="text-align:center">RM ' .$output. '</h1>';
             ?>
@@ -61,7 +61,7 @@
     ?>
 
 
-    <div style="width: 500px;">
+    <div style="width: 80%; margin-left:8%;">
         <canvas class="card" id="myChart"></canvas>
     </div>
  
@@ -71,7 +71,7 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: 'My First Dataset',
+      label: ['April'],
       data: <?php echo json_encode($amount) ?>,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',

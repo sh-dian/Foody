@@ -16,7 +16,7 @@
             exit();
         }
         else if($getType === 'Administrator'){
-            header ("location: Administrator\Page\Login.php");
+            header ("location: Administrator\Login.php");
             exit();
         }
     }
