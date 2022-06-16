@@ -90,16 +90,16 @@ INSERT INTO OrderRecord (Order_ID, Cust_ID, Rest_ID, Rider_ID, Order_MenuName, O
     VALUES (2, 2, 2, 2, 'Premium Beef Steak', 1, 9.50, '2012-04-19 13:08:22',85);
 
 INSERT INTO OrderRecord (Order_ID, Cust_ID, Rest_ID, Rider_ID, Order_MenuName, Order_Quantity, Order_DeliveryFee, Order_DeliveryTime, Order_Total) 
-    VALUES (3, 3, 1, 3, 'Tomyam Seafood', 1, 10, '2012-04-19 13:08:22',20);
+    VALUES (3, 3, 1, 3, 'Tomyam Seafood', 1, 10, '2012-05-12 16:08:22',20);
 
 INSERT INTO OrderRecord (Order_ID, Cust_ID, Rest_ID, Rider_ID, Order_MenuName, Order_Quantity, Order_DeliveryFee, Order_DeliveryTime, Order_Total) 
-    VALUES (4, 4, 2, 4, 'Chicken Chop Special', 1, 9.50, '2012-04-19 13:08:22',55);
+    VALUES (4, 4, 2, 4, 'Chicken Chop Special', 1, 9.50, '2012-05-12 15:08:22',55);
 
 INSERT INTO OrderRecord (Order_ID, Cust_ID, Rest_ID, Rider_ID, Order_MenuName, Order_Quantity, Order_DeliveryFee, Order_DeliveryTime, Order_Total) 
-    VALUES (5, 5, 3, 5, 'Mango Ice Blend with Honeycomb', 1, 7, '2012-04-19 14:08:22',25.50);
+    VALUES (5, 5, 3, 5, 'Mango Ice Blend with Honeycomb', 1, 7, '2012-06-23 14:08:22',25.50);
 
 INSERT INTO OrderRecord (Order_ID, Cust_ID, Rest_ID, Rider_ID, Order_MenuName, Order_Quantity, Order_DeliveryFee, Order_DeliveryTime, Order_Total) 
-    VALUES (6, 5, 3, 5, 'Strawberry Smoothie', 1, 7, '2012-04-19 14:08:22',22);
+    VALUES (6, 5, 3, 5, 'Strawberry Smoothie', 1, 7, '2012-06-23 14:08:22',22);
 
 -- Restaurant Menu data --
 INSERT INTO RestaurantMenu (RM_ID, Rest_ID, RM_MenuName, RM_Description, RM_Price) 
