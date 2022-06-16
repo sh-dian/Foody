@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["adminLogin"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
 ?>
 

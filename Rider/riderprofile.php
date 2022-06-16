@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Rider_login"])){
-        header("Location: riderlogin.php");
+        header("Location: FrontUI.php");
     }
 ?>
 
@@ -29,7 +29,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM rider WHERE Rider_PhoneNum = '{$_SESSION["Rider_login"]}' ";
+            $query = "SELECT * FROM rider WHERE Rider_ID = '{$_SESSION["Rider_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){

@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["RO_login"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
     else{
 

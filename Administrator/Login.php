@@ -6,13 +6,13 @@
         $email= mysqli_real_escape_string($con, $_POST["email"]);
         $password= mysqli_real_escape_string($con, $_POST["password"]);
 
-        $checkID = mysqli_query($con, "SELECT Admin_Email FROM admin WHERE Admin_Email='$email' AND Admin_Password='$password' limit 1");
+        $checkID = mysqli_query($con, "SELECT Admin_ID, Admin_Email FROM admin WHERE Admin_Email='$email' AND Admin_Password='$password' limit 1");
         
         if (mysqli_num_rows($checkID) > 0) {
 
             $row = mysqli_fetch_assoc($checkID);
 
-            $_SESSION["adminLogin"] = $row['Admin_Email'];
+            $_SESSION["adminLogin"] = $row['Admin_ID'];
 
             header("Location: HomePage.php");
 

@@ -3,7 +3,7 @@
     session_start();
 
     if(!isset($_SESSION["Cust_login"])){
-        header("Location: Login.php");
+        header("Location: FrontUI.php");
     }
     else{
         if(isset($_POST["Update"])){
