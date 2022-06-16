@@ -63,7 +63,7 @@
             </li>
 
             <li>
-                <a href="Login.php">
+                <a href="FrontUI.php">
                     <i class='bx bx-log-out-circle' id="logout"></i>
                     <span class="links">Logout</span>
                 </a>
