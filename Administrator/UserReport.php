@@ -63,76 +63,14 @@
             <div class="box"><canvas id="myChart"></canvas></div>
             <div class="box"><canvas id="myChart2"></canvas></div>
             <div class="box"><canvas id="myChart3"></canvas></div>
-
         </div>
     </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
-
-    <?php 
-        $query = $con->query("
-            SELECT 
-                SUM(Cust_ID) as totalUser,
-            FROM customer
-        ");
-
-        foreach($query as $data)
-        {
-            $state[] = $data['Cust_State'];
-            $totalUser[] = $data['totalUser'];
-        }
-
-    ?>
- 
-    <script>
-    // === include 'setup' then 'config' above ===
-    const labels = <?php echo json_encode($state) ?>;
-    const data = {
-        labels: labels,
-        datasets: [{
-        label: <?php echo json_encode($state) ?>,
-        data: <?php echo json_encode($totalUser) ?>,
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-            'rgba(255, 205, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(201, 203, 207, 0.2)'
-        ],
-        borderColor: [
-            'rgb(255, 99, 132)',
-            'rgb(255, 159, 64)',
-            'rgb(255, 205, 86)',
-            'rgb(75, 192, 192)',
-            'rgb(54, 162, 235)',
-            'rgb(153, 102, 255)',
-            'rgb(201, 203, 207)'
-        ],
-        borderWidth: 1
-        }]
-    };
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-        scales: {
-            y: {
-            beginAtZero: true
-            }
-        }
-        },
-    };
-
-    var myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-    </script>
+    <script src = "JavaScript/Graph.js"></script>
+    
 
 </body>
 </html>

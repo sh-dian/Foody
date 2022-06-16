@@ -5,10 +5,10 @@ const ctx3 = document.getElementById('myChart3').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Selangor', 'Kuala Lumpur'],
+        labels: ['Selangor', 'Kuala Lumpur', 'Penang'],
         datasets: [{
             label: 'Total User',
-            data: [2, 1],
+            data: [2,5, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -30,10 +30,10 @@ const myChart = new Chart(ctx, {
 const myChart2 = new Chart(ctx2, {
     type: 'pie',
     data: {
-        labels: ['Petaling Jaya', 'Kuala Lumpur'],
+        labels: ['Petaling Jaya', 'Wilayah Persekutuan', 'Bangsar', 'Butterworth'],
         datasets: [{
             label: 'Total User',
-            data: [2, 1],
+            data: [2,1, 1,1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -55,10 +55,10 @@ const myChart2 = new Chart(ctx2, {
 const myChart3 = new Chart(ctx3, {
     type: 'pie',
     data: {
-        labels: ['Selangor', 'Kuala Lumpur'],
+        labels: ['Selangor', 'Kuala Lumpur', 'Penang'],
         datasets: [{
-            label: '# of Votes',
-            data: [1,1],
+            label: 'Total User',
+            data: [2,2, 1],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

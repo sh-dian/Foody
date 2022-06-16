@@ -40,7 +40,8 @@
     </div>
 
     <div class="flexbox">
-        <div class="card">       
+        <div class="card"> 
+            <a href="UserReport.php" style="text-decoration:none; color:black;">      
             <h2 style="text-align:center">Total User</h2>
             <?php         
                 $query = "SELECT Rest_ID FROM restaurant ORDER BY Rest_ID";  
@@ -60,6 +61,7 @@
                 $result = $row1 + $row2 + $row3;
                 echo '<h1 style="text-align:center">' .$result. '</h1>';
             ?>
+            </a>
 
         </div>
 
@@ -71,33 +73,95 @@
                  $row = mysqli_num_rows($query_run);
                  echo '<h1 style="text-align:center">' .$row. '</h1>';
             ?>
+
         </div>
 
-        <div class="card">       
+        <div class="card">   
+        <a href="Profit.php" style="text-decoration:none; color:black;">        
             <h2 style="text-align:center">Total Profit</h2>
             <?php         
-                $query = "SELECT SUM(Order_Total) As sum FROM orderrecord ";  
+                $query = "SELECT SUM(Order_Total)*0.10 As sum FROM orderrecord ";  
                 $result = mysqli_query($con, $query);
 
                 while($row = $result->fetch_assoc()){
-                    $output = $row['sum'];
+                    $output = number_format($row['sum'],2);
                 }
                 echo '<h1 style="text-align:center">RM ' .$output. '</h1>';
             ?>
+             </a>
         </div>
     </div>
-
-    <div>
-        <div class="graphBox">
-            <div class="box"><canvas id="myChart"></canvas></div>
-            <div class="box"><canvas id="myChart2"></canvas></div>
-        </div>
-    </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <script src="https://kit.fontawesome.com/bcdb11579f.js" crossorigin="anonymous"></script>
-    <script src="JavaScript/HomePageGraph.js"></script>
+
+    <?php 
+        $query = $con->query("
+            SELECT 
+            MONTH(Order_DeliveryTime) as month,
+                SUM(Order_Total) as amount
+            FROM orderrecord
+            GROUP BY month
+        ");
+
+        foreach($query as $data)
+        {
+            $month[] = $data['month'];
+            $amount[] = $data['amount'];
+        }
+
+    ?>
+
+
+    <div style="width: 80%; margin-left:8%;">
+        <a href="Profit.php"><canvas class="card" id="myChart"></canvas></a>
+    </div>
+ 
+    <script>
+        // === include 'setup' then 'config' above ===
+        const labels = <?php echo json_encode($month) ?>;
+        const data = {
+            labels: labels,
+            datasets: [{
+            label: 'Monthly Profit',
+            data: <?php echo json_encode($amount) ?>,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+                'rgb(153, 102, 255)',
+                'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+            options: {
+                responsive:true,
+            }
+            },
+        };
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
 
 </body>
 </html>

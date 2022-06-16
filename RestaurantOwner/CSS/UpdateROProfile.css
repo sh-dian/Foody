@@ -12,15 +12,15 @@ form{
     margin-top: 3%;
 }
 
-form .UpdateProfile .inputBox{
+form .updateProfile .inputBox{
     padding-left: 10rem;
 }
 
-.UpdateProfile .inputBox .details{
+.updateProfile .inputBox .details{
     margin-bottom: 5px;
 }
 
-.UpdateProfile .inputBox input{
+.updateProfile .inputBox input{
     padding-left: 1rem;
     font-size: 16px;
     width: 50%;

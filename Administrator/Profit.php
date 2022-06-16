@@ -50,6 +50,7 @@
             MONTH(Order_DeliveryTime) as month,
                 SUM(Order_Total) as amount
             FROM orderrecord
+            GROUP BY month
         ");
 
         foreach($query as $data)
@@ -71,7 +72,7 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: ['April'],
+      label: 'Monthly Profit',
       data: <?php echo json_encode($amount) ?>,
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -99,10 +100,8 @@
     type: 'bar',
     data: data,
     options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
+      options: {
+        responsive:true,
       }
     },
   };

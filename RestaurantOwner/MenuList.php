@@ -1,3 +1,13 @@
+<?php
+    include_once 'C:\xampp\htdocs\Foody\Database\db.php';
+    session_start();
+
+    if(!isset($_SESSION["RO_login"])){
+        header("Location: FrontUI.php");
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
