@@ -16,6 +16,12 @@
     <title>Admin Profile</title>
 
     <link rel="stylesheet" href="CSS/userProfile.css"/>
+    <style>
+        body{
+            margin-left: 5%;
+            padding: 5%;
+        }
+    </style>
 
 </head>
 <body>
@@ -26,7 +32,7 @@
 
     <form action="" method="post">
         <?php
-            $query = "SELECT * FROM customer WHERE Cust_PhoneNum = '{$_SESSION["Cust_login"]}' ";
+            $query = "SELECT * FROM customer WHERE Cust_ID = '{$_SESSION["Cust_login"]}' ";
             $result = mysqli_query($con, $query);
 
             if(mysqli_num_rows($result) > 0){

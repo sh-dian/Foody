@@ -48,46 +48,58 @@
             <h2>Top Restaurant</h2>
             <br/>
 
-            <div id="popular-restaurant" class="restaurant-list">
+            <div class="bar">
+        
 
+        <h1><i class="fa-solid fa-chart-line"></i>Select Restaurant</h1>
+    </div>
 
+    <?php 
+                
+                $query = "SELECT * FROM restaurant";
+                        $result = mysqli_query($con, $query);
+            ?>
 
-            <div class="row">
-                    <div class="restaurant-listing">
-                        
-						
-						<?php  
-						$ress= mysqli_query($con,"select * from restaurant");  
-									      while($rows=mysqli_fetch_array($ress))
-										  {
-													
-													$query= mysqli_query($con,"select * from restaurant where Rest_ID='".$rows['Rest_ID']."' ");
-													 $rowss=mysqli_fetch_array($query);
-						
-													 echo ' <div class="col-xs-12 col-sm-12 col-md-6 single-restaurant all '.$rowss['Rest_Name'].'">
-														<div class="restaurant-wrap">
-															<div class="row">
-																<div class="col-xs-12 col-sm-3 col-md-12 col-lg-3 text-xs-center">
-																	<a class="restaurant-logo" href="dishes.php?res_id='.$rows['Rest_ID'].'" > <img src="admin/Res_img/'.$rows['image'].'" alt="Restaurant logo"> </a>
-																</div>
-													
-																<div class="col-xs-12 col-sm-9 col-md-12 col-lg-9">
-																	<h5><a href="dishes.php?res_id='.$rows['Rest_ID'].'" >'.$rows['title'].'</a></h5> <span>'.$rows['address'].'</span>
-																</div>
-													
-															</div>
-												
-														</div>
-												
-													</div>';
-										  }
-						
-						
-						?>
-						
-							
-						
-					
-                    </div>
-                </div>
+                        <table border="1px" style="width: 70%; line-height:30px;">
+                            <tr>
+                                <th colspan=6><h2>ADDRESS</h2></th>
+                            </tr>
+
+                            <t>
+                                <th> Name </th>
+                                <th> Address</th>
+                                <th>State</th>
+                                <th>Phone Number</th>
+                                
+                            </t>
+
+                            <?php
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $ID = $row['Rest_ID'];
+                                        $restName = $row['Rest_Name'];
+                                        $restAddress= $row['Rest_Address'];
+                                        $restState = $row['Rest_State'];
+                                        $phoneNum = $row['Rest_PhoneNum'];
+
+                                        
+                                        echo 
+                                        '<tr>
+                                            <td style="padding: 0 1rem">'.$restName.'</td>
+                                            <td style="padding: 0 1rem">'.$restAddress.'</td>
+                                            <td style="padding: 0 1rem">'.$restState.'</td>
+                                            <td style="padding: 0 1rem">'.$phoneNum.'</td>
+
+                                            <td style="padding: 0 1rem">
+                                                <button><a href= "GU_Menu.php?viewid='.$ID.'">Explore</a></button>
+                                                
+                                            </td>
+                                        </tr>';
+                                    }
+                                }
+                            ?>
+
+                        </table><br><br>
+
 
