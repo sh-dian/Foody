@@ -6,6 +6,17 @@
         header("Location: login.php");
     }
     
+    if($result){
+        echo "
+        <script>
+            alert('Updated Success!');
+            window.location = 'GU_HomePage.php';
+        </script>";
+
+    }else{
+        echo "<script>alert('Updated FAILED');</script>";
+        echo $con->error;
+    }
 ?>
 
 <!DOCTYPE html>
