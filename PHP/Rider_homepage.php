@@ -66,7 +66,7 @@
                         <td><?php echo $Quantity;?></td>
                         <td><?php echo $DeliveryFee;?></td>
                         <td><?php echo $OrderTotal;?></td>
-                        <td><form action="updatedeliveryQR.php" method="post"><input type="text" id="Order_ID" name="Order_ID" value="<?php echo $row['Order_ID'] ?>" hidden><button type="submit" class="button" style="width:100%;">Update</button></form></td>
+                        <td><form action="Rider_updatedeliveryQR.php" method="post"><input type="text" id="Order_ID" name="Order_ID" value="<?php echo $row['Order_ID'] ?>" hidden><button type="submit" class="button" style="width:100%;">Update</button></form></td>
                     </tr>
         <?php
                 }
