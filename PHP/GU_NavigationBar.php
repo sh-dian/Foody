@@ -54,13 +54,6 @@
                 <span class="tooltip">Reorder</span>            
             </li>
 
-            <li>
-                <a href="GU_Expenses.php">
-                    <i class='bx bx-cog' id="setting"></i>
-                    <span class="links">Expenses</span>
-                </a>
-                <span class="tooltip">Expenses</span>            
-            </li>
 
             <li>
                 <a href="login.php">

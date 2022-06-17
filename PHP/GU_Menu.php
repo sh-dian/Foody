@@ -38,8 +38,8 @@
 
     
     <?php 
-                
-                $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '{$_SESSION["Cust_login"]}' ";
+             $ID = $_GET ['viewid'];   
+                $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$ID' ";
                         $result = mysqli_query($con, $query);
             ?>
 
@@ -81,6 +81,47 @@
                             ?>
 
                         </table><br><br>
+                        <hr>
+                        <table border="1px" style="width: 70%; line-height:30px;">
+                            <tr>
+                                <th colspan=6><h2>Your Cart</h2></th>
+                            </tr>
+
+                            <t>
+                                <th>Menu Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                
+                            </t>
+
+                            <?php
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while($row = $result->fetch_assoc()) {
+                                        $ID = $row['Rest_ID'];
+                                        $menuName = $row['RM_MenuName'];
+                                        $menuDesc = $row['RM_Description'];
+                                        $price = $row['RM_Price'];
+
+                                        
+                                        echo 
+                                        '<tr>
+                                            <td style="padding: 0 1rem">'.$menuName.'</td>
+                                            <td style="padding: 0 1rem">'.$menuDesc.'</td>
+                                            <td style="padding: 0 1rem">'.$price .'</td>
+
+                                            <td style="padding: 0 1rem">
+                                                <button><a href= "GU_Cart.php?viewid='.$ID.'">Add to Cart</a></button>
+                                               
+                                            </td>
+                                        </tr>';
+                                    }
+                                }
+                            ?>
+
+                        </table><br><br>
+
+
 
 
 
