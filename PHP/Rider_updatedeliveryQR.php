@@ -13,7 +13,7 @@ if (session_id() == '' || !isset($_SESSION)) {
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">
 		function generateBarCode() {
-			var nric = "(link website)/foody/rider/Rider_updatedelivery.php?Order_ID=<?php echo $_POST['Order_ID'] ?>";			var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+			var nric = "10.52.41.121/foody/rider/Rider_updatedelivery.php?Order_ID=<?php echo $_POST['Order_ID'] ?>";			var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
 			$('#barcode').attr('src', url);
 		}
 	</script>
