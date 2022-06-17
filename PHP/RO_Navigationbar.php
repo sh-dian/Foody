@@ -47,6 +47,14 @@
             </li>
 
             <li>
+                <a href="RO_MenuList.php">
+                <i class='bx bxs-edit-alt'></i>
+                    <span class="links">Order List</span>
+                </a>
+                <span class="tooltip">Order List</span>            
+            </li>
+
+            <li>
                 <a href="RO_Report.php">
                     <i class='bx bxs-report'></i>
                     <span class="links">Report</span>
