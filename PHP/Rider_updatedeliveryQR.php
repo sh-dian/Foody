@@ -13,7 +13,8 @@ if (session_id() == '' || !isset($_SESSION)) {
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script type="text/javascript">
 		function generateBarCode() {
-			var nric = "10.52.41.121/foody/rider/Rider_updatedelivery.php?Order_ID=<?php echo $_POST['Order_ID'] ?>";			var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
+			var nric = "10.52.41.121/Foody/PHP/Rider_updatedelivery.php?Order_ID=<?php echo $_POST['Order_ID'] ?>";
+			var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + nric + '&amp;size=50x50';
 			$('#barcode').attr('src', url);
 		}
 	</script>
@@ -30,7 +31,7 @@ if (session_id() == '' || !isset($_SESSION)) {
 		<div class="qr">
 			<img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="HELLO" margin-left: auto; margin-right: auto; width="300" height="300" />
 		</div>
-        <form action="Rider_history.php"><button type="submit" class="button" style="width:20%;">Back</button></form>
+        <form action="riderhistory.php"><button type="submit" class="button" style="width:20%;">Back</button></form>
 	</div>
 </div>
 
