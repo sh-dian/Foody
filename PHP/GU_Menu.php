@@ -111,7 +111,7 @@
                                             <td style="padding: 0 1rem">'.$price .'</td>
 
                                             <td style="padding: 0 1rem">
-                                                <button><a href= "GU_Cart.php?viewid='.$ID.'">Add to Cart</a></button>
+                                            <button><a href= "GU_Cart.php?viewid='.$ID.'">Add to Cart</a></button>
                                                
                                             </td>
                                         </tr>';

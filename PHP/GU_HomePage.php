@@ -62,7 +62,7 @@
 
                         <table border="1px" style="width: 70%; line-height:30px;">
                             <tr>
-                                <th colspan=6><h2>ADDRESS</h2></th>
+                                <th colspan=6><h2>RESTAURANT LIST</h2></th>
                             </tr>
 
                             <t>
