@@ -3,13 +3,13 @@
     include_once 'C:\xampp\htdocs\Foody\Database\db.php';
     session_start();
 
-    if(!isset($_SESSION["RO_Login"])){
+    if(!isset($_SESSION["RO_login"])){
         header("Location: login.php");
 
     }else{
 
-        if(isset($_GET['RM_ID'])){
-            $id = $_GET['RM_ID'];
+        if(isset($_GET['deleteid'])){
+            $id = $_GET['deleteid'];
 
             $query = "DELETE FROM restaurantmenu WHERE RM_ID= '$id' ";
             $result = mysqli_query($con,$query);
