@@ -48,6 +48,14 @@
                     }
                 }
         }
+        
+        if(isset($_POST['Update'])){
+            echo "
+                <script>
+                    alert('Order Success!');
+                    window.location = 'GU_HomePage.php';
+                </script>";
+        }
     }
     
 ?>
@@ -95,8 +103,8 @@
                             <form method="post" action="GU_Menu.php?add=<?php echo $row["RM_ID"]; ?>&id=<?php echo $row["Rest_ID"]; ?>">
                                 <div style="border : 1px solid #333; background-color : #f1f1f1; border-radius :5px; padding :16px; ">
                                     <h3 class="text-info"><?php echo $row["RM_MenuName"]; ?></h3>
-                                    <h4 class="text-danger">$ <?php echo $row["RM_Description"]; ?></h4>
-                                    <h4 class="text-danger">$ <?php echo $row["RM_Price"]; ?></h4>
+                                    <h4 class="text-danger"><?php echo $row["RM_Description"]; ?></h4>
+                                    <h4 class="text-danger">RM <?php echo $row["RM_Price"]; ?></h4>
                                     <input type="text" name="quantity" class="form-control" value="1" />
                                     <input type="hidden" name="hidden_name" value="<?php echo $row["RM_MenuName"]; ?>" />
                                     <input type="hidden" name="hidden_price" value="<?php echo $row["RM_Price"]; ?>" />
@@ -150,5 +158,10 @@
                             }    
                             ?>
                         </table>
+
+                        <form action="#" method="post">
+                            <button type="submit" class="btn" name="Update">Confirm Order</button>
+                        </form>
+                        
 </body>
 </html>
