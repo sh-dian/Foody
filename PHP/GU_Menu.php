@@ -49,6 +49,13 @@
                 }
         }
         
+        if(isset($_POST['Update'])){
+            echo "
+                <script>
+                    alert('Order Success!');
+                    window.location = 'GU_HomePage.php';
+                </script>";
+        }
     }
     
 ?>
@@ -151,7 +158,10 @@
                             }    
                             ?>
                         </table>
-                        <a href ="GU_HomePage.php"><button type="submit" class="btn" name="Update">Confirm Order</button></a>
+
+                        <form action="#" method="post">
+                            <button type="submit" class="btn" name="Update">Confirm Order</button>
+                        </form>
                         
 </body>
 </html>
