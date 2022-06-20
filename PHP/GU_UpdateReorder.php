@@ -9,8 +9,8 @@
         $id = $_GET['viewid'];
 
         if(isset($_POST["Update"])){
-            $custName = mysqli_real_escape_string($con, $_POST["custName"]);
-            $query = "UPDATE customer SET Cust_Name='$custName' WHERE Cust_ID = '$id'";
+            $quantity = mysqli_real_escape_string($con, $_POST["Order_Quantity"]);
+            $query = "UPDATE orderrecord SET Order_Quantity='$quantity' WHERE Cust_ID = '$id'";
 
             $result = mysqli_query($con, $query);
             
@@ -18,7 +18,7 @@
                 echo "
                 <script>
                     alert('Updated Success!');
-                    window.location = 'GU_ManageAddress.php';
+                    window.location = 'GU_ReorderMenu.php';
                 </script>";
 
             }else{
@@ -35,7 +35,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update User Address</title>
+    <title>Reorder Menu</title>
 
     <link rel="stylesheet" href="CSS/updateAddress.css"/>
 
@@ -45,7 +45,7 @@
     <!-- Navigation Bar -->
     <?php include "./GU_NavigationBar.php" ?>
 
-    <h1>Update User Address</h1>
+    <h1>Update Reorder Menu</h1>
 
     <form action="" method="post">
         <?php
@@ -77,7 +77,7 @@
 
                 <div class="inputBox">
                     <label>Quantity: </label>
-                    <input type="text" id="quantity" name="quantity" value="<?php echo $row['Order_Quantity'] ?>"><br><br>
+                    <input type="text" id="Order_Quantity" name="Order_Quantity" value="<?php echo $row['Order_Quantity'] ?>"><br><br>
                 </div>
 
             </div>

@@ -36,7 +36,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Owner Profile</title>
+    <title>Update User Profile</title>
 
     <link rel="stylesheet" href="CSS/updateCustProfile.css"/>
 
@@ -45,7 +45,7 @@
     <!-- Navigation Bar -->
     <?php include "./GU_Navigationbar.php" ?>
 
-    <h1>Customer Profile</h1>
+    <h1>Update User Profile</h1>
 
     <form action="" method="post">
         <?php
