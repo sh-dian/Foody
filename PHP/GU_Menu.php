@@ -22,11 +22,7 @@
                     );
                     $_SESSION["shopping_cart"][$count] = $item_array;
                 }
-                else
-                {
-                    echo '<script>alert("Item is Already Added")</script>';
-                    echo '<script>window.location="GU_Menu.php"</script>';
-                }
+            
             }
             else
             {
@@ -46,10 +42,9 @@
             {
                 foreach($_SESSION["shopping_cart"] as $keys => $values)
                 {
-                    if($values["item_id"] == $_GET["Rest_ID"])
+                    if($values["item_Rest_ID"] == $_GET["id"])
                     {
                         unset($_SESSION["shopping_cart"][$keys]);
-                        echo '<script>window.location="GU_Menu.php"</script>';
                     }
                 }
             }
@@ -87,9 +82,8 @@
     </div>
 
     
-    <?php 
-             $ID = $_GET ['id'];   
-                $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$ID' ";
+            <?php   
+                $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$_GET[id]' ";
                         $result = mysqli_query($con, $query);
                         if(mysqli_num_rows($result) > 0)
                         {
