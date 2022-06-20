@@ -5,18 +5,56 @@
     if(!isset($_SESSION["Cust_login"])){
         header("Location: login.php");
     }
-    
-    if($result){
-        echo "
-        <script>
-            alert('Updated Success!');
-            window.location = 'GU_HomePage.php';
-        </script>";
 
-    }else{
-        echo "<script>alert('Updated FAILED');</script>";
-        echo $con->error;
+if(isset($_POST["add_to_cart"]))
+{
+    if(isset($_SESSION["shopping_cart"]))
+    {
+        $item_array_id = array_column($_SESSION["shooping_cart"], "item_Rest_ID");
+        if(!in_array($_GET["id"], $item_array_id))
+        {
+            $count = count($_SESSION["shopping_cart"]);
+            $item_array = array(
+                'item_Rest_ID'              =>           $_GET["id"],
+                'item_RM_MenuName'          =>           $_POST["hidden_name"],
+                'item_RM_Price'             =>           $_POST["hidden_price"],
+                'item_quantity'             =>           $_POST["quantity"],
+            );
+            $_SESSION["shopping_cart"][$count] = $item_array;
+        }
+        else
+        {
+            echo '<script>alert("Item is Already Added")</script>';
+            echo '<script>window.location="GU_Menu.php"</script>';
+        }
     }
+    else
+    {
+        $item_array = array(
+            'item_Rest_ID'              =>           $_GET["id"],
+            'item_RM_MenuName'          =>           $_POST["hidden_name"],
+            'item_RM_Price'             =>           $_POST["hidden_price"],
+            'item_quantity'             =>           $_POST["quantity"],
+        );
+        $_SESSION["shopping_cart"] [0] = $item_array;
+    }
+}
+
+if(isset($_GET["action"]))
+{
+    if($_GET["action"] == "delete")
+    {
+        foreach($_SESSION["shopping_cart"] as $keys => $values)
+        {
+            if($values["item_id"] == $_GET["Rest_ID"])
+            {
+                unset($_SESSION["shopping_cart"][$keys]);
+                echo '<script>window.location="GU_Menu.php"</script>';
+            }
+        }
+    }
+}
+    
 ?>
 
 <!DOCTYPE html>
@@ -52,87 +90,66 @@
              $ID = $_GET ['viewid'];   
                 $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$ID' ";
                         $result = mysqli_query($con, $query);
-            ?>
-
-                        <table border="1px" style="width: 70%; line-height:30px;">
-                            <tr>
-                                <th colspan=6><h2>Restaurant Menu</h2></th>
+                        if(mysqli_num_rows($result) > 0)
+                        {
+                        
+                            while ($row = mysqli_fetch_array($result))
+                            {
+                            
+                        ?>
+                        <div class ="col-md-4">
+                            <form method="post" action="GU_Menu.php?action=add&id=<?php echo $row["Rest_ID"]; ?>">
+                                <div style="border : 1px solid #333; background-color : #f1f1f1; border-radius :5px; padding :16px; ">
+                                    <h3 class="text-info"><?php echo $row["RM_MenuName"]; ?></h3>
+                                    <h4 class="text-danger">$ <?php echo $row["RM_Description"]; ?></h4>
+                                    <h4 class="text-danger">$ <?php echo $row["RM_Price"]; ?></h4>
+                                    <input type="text" name="quantity" class="form-control" value="1" />
+                                    <input type="hidden" name="hidden_name" value="<?php echo $row["RM_MenuName"]; ?>" />
+                                    <input type="hidden" name="hidden_price" value="<?php echo $row["RM_Price"]; ?>" />
+                                    <input type="submit" name="add to cart" style="margin-top :5px;" class="btn btn-success" value="Add to Cart" />
+                                 </div>
+                            </form>
+                        </div>
+                    <?php
+                            }
+                        }
+                    ?>
+                        <div style="clear:both"></div>
+                        <br />
+                        <h3>Order Details</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="40%">Item Name</th>
+                                    <th width="10%">Quantity</th>
+                                    <th width="20%">Price</th>
+                                    <th width="15%">Total Price</th>
+                                    <th width="5%">Action</th>
                             </tr>
-
-                            <t>
-                                <th>Menu Name</th>
-                                <th>Menu Description</th>
-                                <th>Price</th>
-                                
-                            </t>
-
                             <?php
-                                if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
-                                        $ID = $row['Rest_ID'];
-                                        $menuName = $row['RM_MenuName'];
-                                        $menuDesc = $row['RM_Description'];
-                                        $price = $row['RM_Price'];
-
-                                        
-                                        echo 
-                                        '<tr>
-                                            <td style="padding: 0 1rem">'.$menuName.'</td>
-                                            <td style="padding: 0 1rem">'.$menuDesc.'</td>
-                                            <td style="padding: 0 1rem">'.$price .'</td>
-
-                                            <td style="padding: 0 1rem">
-                                                <button><a href= "GU_Cart.php?viewid='.$ID.'">Add to Cart</a></button>
-                                               
-                                            </td>
-                                        </tr>';
-                                    }
-                                }
+                            if(!empty($_SESSION["shopping_cart"]))
+                            {
+                                $total = 0;
+                                foreach($_SESSION["shopping_cart"] as $keys => $values)
+                                {
                             ?>
-
-                        </table><br><br>
-                        <hr>
-                        <table border="1px" style="width: 70%; line-height:30px;">
                             <tr>
-                                <th colspan=6><h2>Your Cart</h2></th>
+                                <td><?php echo $values["item_name"]; ?></td>
+                                <td><?php echo $values["item_quantity"]; ?></td>
+                                <td>RM <?php echo $values["item_price"]; ?></td>
+                                <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
+                                <td><a href="GU_Menu.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Delete</span></a></td>
                             </tr>
-
-                            <t>
-                                <th>Menu Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                
-                            </t>
-
                             <?php
-                                if ($result->num_rows > 0) {
-                                    // output data of each row
-                                    while($row = $result->fetch_assoc()) {
-                                        $ID = $row['Rest_ID'];
-                                        $menuName = $row['RM_MenuName'];
-                                        $menuDesc = $row['RM_Description'];
-                                        $price = $row['RM_Price'];
-
-                                        
-                                        echo 
-                                        '<tr>
-                                            <td style="padding: 0 1rem">'.$menuName.'</td>
-                                            <td style="padding: 0 1rem">'.$menuDesc.'</td>
-                                            <td style="padding: 0 1rem">'.$price .'</td>
-
-                                            <td style="padding: 0 1rem">
-                                            <button><a href= "GU_Cart.php?viewid='.$ID.'">Add to Cart</a></button>
-                                               
-                                            </td>
-                                        </tr>';
-                                    }
+                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);
                                 }
+                            }
+
+                                    
                             ?>
+    
 
-                        </table><br><br>
-
-
+                       
 
 
 
