@@ -10,7 +10,7 @@
         {
             if(isset($_SESSION["shopping_cart"]))
             {
-                $item_array_id = array_column($_SESSION["shooping_cart"], "item_Rest_ID");
+                $item_array_id = array_column($_SESSION["shopping_cart"], "item_Rest_ID");
                 if(!in_array($_GET["id"], $item_array_id))
                 {
                     $count = count($_SESSION["shopping_cart"]);
@@ -69,7 +69,7 @@
     <link rel="stylesheet" href="CSS/menu.css"/>
     <style>
         body{
-            margin-left: 2%;
+            margin-left: 5%;
             padding: 2%;
         }
     </style>
@@ -88,7 +88,7 @@
 
     
     <?php 
-             $ID = $_GET ['viewid'];   
+             $ID = $_GET ['id'];   
                 $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$ID' ";
                         $result = mysqli_query($con, $query);
                         if(mysqli_num_rows($result) > 0)
@@ -119,7 +119,7 @@
                         <br />
                         <h3>Order Details</h3>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" border=1>
                                 <tr>
                                     <th width="40%">Item Name</th>
                                     <th width="10%">Quantity</th>
@@ -135,16 +135,17 @@
                                 {
                             ?>
                             <tr>
-                                <td><?php echo $values["item_name"]; ?></td>
-                                <td><?php echo $values["item_quantity"]; ?></td>
-                                <td>RM <?php echo $values["item_price"]; ?></td>
-                                <td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-                                <td><a href="GU_Menu.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">Delete</span></a></td>
+                                <td style="text-align=center;"><?php echo $values["item_RM_MenuName"]; ?></td>
+                                <td style="text-align=center;"><?php echo $values["item_quantity"]; ?></td>
+                                <td style="text-align=center;">RM <?php echo $values["item_RM_Price"]; ?></td>
+                                <td style="text-align=center;"><?php echo number_format($values["item_quantity"] * $values["item_RM_Price"], 2); ?></td>
+                                <td style="text-align=center;"> <a href="GU_Menu.php?action=delete&id=<?php echo $values["item_Rest_ID"]; ?>"><span class="text-danger">Delete</span></a></td>
                             </tr>
                             <?php
-                                    $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                                    $total = $total + ($values["item_quantity"] * $values["item_RM_Price"]);
                                 }
                             }       
                             ?>
+                        </table>
 </body>
 </html>
