@@ -31,7 +31,7 @@ if (session_id() == '' || !isset($_SESSION)) {
 		<div class="qr">
 			<img id='barcode' src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="HELLO" margin-left: auto; margin-right: auto; width="300" height="300" />
 		</div>
-        <form action="riderhistory.php"><button type="submit" class="button" style="width:20%;">Back</button></form>
+        <form action="Rider_history.php"><button type="submit" class="button" style="width:20%;">Back</button></form>
 	</div>
 </div>
 
