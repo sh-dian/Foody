@@ -4,56 +4,57 @@
 
     if(!isset($_SESSION["Cust_login"])){
         header("Location: login.php");
-    }
+    }else{
 
-if(isset($_POST["add_to_cart"]))
-{
-    if(isset($_SESSION["shopping_cart"]))
-    {
-        $item_array_id = array_column($_SESSION["shooping_cart"], "item_Rest_ID");
-        if(!in_array($_GET["id"], $item_array_id))
+        if(isset($_POST["add_to_cart"]))
         {
-            $count = count($_SESSION["shopping_cart"]);
-            $item_array = array(
-                'item_Rest_ID'              =>           $_GET["id"],
-                'item_RM_MenuName'          =>           $_POST["hidden_name"],
-                'item_RM_Price'             =>           $_POST["hidden_price"],
-                'item_quantity'             =>           $_POST["quantity"],
-            );
-            $_SESSION["shopping_cart"][$count] = $item_array;
-        }
-        else
-        {
-            echo '<script>alert("Item is Already Added")</script>';
-            echo '<script>window.location="GU_Menu.php"</script>';
-        }
-    }
-    else
-    {
-        $item_array = array(
-            'item_Rest_ID'              =>           $_GET["id"],
-            'item_RM_MenuName'          =>           $_POST["hidden_name"],
-            'item_RM_Price'             =>           $_POST["hidden_price"],
-            'item_quantity'             =>           $_POST["quantity"],
-        );
-        $_SESSION["shopping_cart"] [0] = $item_array;
-    }
-}
-
-if(isset($_GET["action"]))
-{
-    if($_GET["action"] == "delete")
-    {
-        foreach($_SESSION["shopping_cart"] as $keys => $values)
-        {
-            if($values["item_id"] == $_GET["Rest_ID"])
+            if(isset($_SESSION["shopping_cart"]))
             {
-                unset($_SESSION["shopping_cart"][$keys]);
-                echo '<script>window.location="GU_Menu.php"</script>';
+                $item_array_id = array_column($_SESSION["shooping_cart"], "item_Rest_ID");
+                if(!in_array($_GET["id"], $item_array_id))
+                {
+                    $count = count($_SESSION["shopping_cart"]);
+                    $item_array = array(
+                        'item_Rest_ID'              =>           $_GET["id"],
+                        'item_RM_MenuName'          =>           $_POST["hidden_name"],
+                        'item_RM_Price'             =>           $_POST["hidden_price"],
+                        'item_quantity'             =>           $_POST["quantity"],
+                    );
+                    $_SESSION["shopping_cart"][$count] = $item_array;
+                }
+                else
+                {
+                    echo '<script>alert("Item is Already Added")</script>';
+                    echo '<script>window.location="GU_Menu.php"</script>';
+                }
+            }
+            else
+            {
+                $item_array = array(
+                    'item_Rest_ID'              =>           $_GET["id"],
+                    'item_RM_MenuName'          =>           $_POST["hidden_name"],
+                    'item_RM_Price'             =>           $_POST["hidden_price"],
+                    'item_quantity'             =>           $_POST["quantity"],
+                );
+                $_SESSION["shopping_cart"] [0] = $item_array;
+            }
+        }
+
+        if(isset($_GET["action"]))
+        {
+            if($_GET["action"] == "delete")
+            {
+                foreach($_SESSION["shopping_cart"] as $keys => $values)
+                {
+                    if($values["item_id"] == $_GET["Rest_ID"])
+                    {
+                        unset($_SESSION["shopping_cart"][$keys]);
+                        echo '<script>window.location="GU_Menu.php"</script>';
+                    }
+                }
             }
         }
     }
-}
     
 ?>
 
@@ -143,15 +144,7 @@ if(isset($_GET["action"]))
                             <?php
                                     $total = $total + ($values["item_quantity"] * $values["item_price"]);
                                 }
-                            }
-
-                                    
+                            }       
                             ?>
-    
-
-                       
-
-
-
 </body>
 </html>
