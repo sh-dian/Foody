@@ -152,5 +152,6 @@
                             ?>
                         </table>
                         <a href ="GU_HomePage.php"><button type="submit" class="btn" name="Update">Confirm Order</button></a>
+                        
 </body>
 </html>
