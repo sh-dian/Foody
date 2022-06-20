@@ -10,12 +10,13 @@
         {
             if(isset($_SESSION["shopping_cart"]))
             {
-                $item_array_id = array_column($_SESSION["shopping_cart"], "item_Rest_ID");
-                if(!in_array($_GET["action"], $item_array_id))
+                $item_array_id = array_column($_SESSION["shopping_cart"], "item_RM_ID");
+                if(!in_array($_GET["add"], $item_array_id))
                 {
                     $count = count($_SESSION["shopping_cart"]);
                     $item_array = array(
-                        'item_Rest_ID'              =>           $_GET["action"],
+                        'item_Rest_ID'              =>         $_GET["id"],
+                        'item_RM_ID'              =>           $_GET["add"],
                         'item_RM_MenuName'          =>           $_POST["hidden_name"],
                         'item_RM_Price'             =>           $_POST["hidden_price"],
                         'item_quantity'             =>           $_POST["quantity"],
@@ -27,7 +28,8 @@
             else
             {
                 $item_array = array(
-                    'item_Rest_ID'              =>           $_GET["id"],
+                    'item_Rest_ID'              =>         $_GET["id"],
+                    'item_RM_ID'              =>           $_GET["add"],
                     'item_RM_MenuName'          =>           $_POST["hidden_name"],
                     'item_RM_Price'             =>           $_POST["hidden_price"],
                     'item_quantity'             =>           $_POST["quantity"],
@@ -38,16 +40,13 @@
 
         if(isset($_GET["action"]))
         {
-            if($_GET["action"] == "delete")
-            {
                 foreach($_SESSION["shopping_cart"] as $keys => $values)
                 {
-                    if($values["item_Rest_ID"] == $_GET["id"])
+                    if($values["item_RM_ID"] == $_GET["action"])
                     {
                         unset($_SESSION["shopping_cart"][$keys]);
                     }
                 }
-            }
         }
     }
     
@@ -93,7 +92,7 @@
                             
                         ?>
                         <div class ="col-md-4">
-                            <form method="post" action="GU_Menu.php?action=<?php echo $row["RM_ID"]; ?>&id=<?php echo $row["Rest_ID"]; ?>">
+                            <form method="post" action="GU_Menu.php?add=<?php echo $row["RM_ID"]; ?>&id=<?php echo $row["Rest_ID"]; ?>">
                                 <div style="border : 1px solid #333; background-color : #f1f1f1; border-radius :5px; padding :16px; ">
                                     <h3 class="text-info"><?php echo $row["RM_MenuName"]; ?></h3>
                                     <h4 class="text-danger">$ <?php echo $row["RM_Description"]; ?></h4>
@@ -101,7 +100,7 @@
                                     <input type="text" name="quantity" class="form-control" value="1" />
                                     <input type="hidden" name="hidden_name" value="<?php echo $row["RM_MenuName"]; ?>" />
                                     <input type="hidden" name="hidden_price" value="<?php echo $row["RM_Price"]; ?>" />
-                                    <input type="submit" name="add_to_cart" style="margin-top :5px;" class="btn btn-success" value="Add to Cart" />
+                                    <input type="submit" name="add to cart" style="margin-top :5px;" class="btn btn-success" value="Add to Cart" />
                                  </div>
                             </form>
                         </div>
@@ -113,7 +112,7 @@
                         <br />
                         <h3>Order Details</h3>
                         <div class="table-responsive">
-                        <table class="table table-bordered" border=1>
+                            <table class="table table-bordered" border=1>
                                 <tr>
                                     <th width="40%">Item Name</th>
                                     <th width="10%">Quantity</th>
@@ -122,23 +121,33 @@
                                     <th width="5%">Action</th>
                             </tr>
                             <?php
-                            if(!empty($_SESSION["shopping_cart"]))
-                            {
-                                $total = 0;
-                                foreach($_SESSION["shopping_cart"] as $keys => $values)
+                             $query = "SELECT * FROM restaurantmenu WHERE Rest_ID = '$_GET[id]' LIMIT 1";
+                             $result = mysqli_query($con, $query);
+                             if(mysqli_num_rows($result) > 0)
+                             {
+                             
+                                 while ($row = mysqli_fetch_array($result))
+                                 {
+
+                                if(!empty($_SESSION["shopping_cart"]))
                                 {
-                            ?>
+                                    $total = 0;
+                                    foreach($_SESSION["shopping_cart"] as $keys => $values)
+                                    {
+                                ?>
                             <tr>
                                 <td style="text-align=center;"><?php echo $values["item_RM_MenuName"]; ?></td>
                                 <td style="text-align=center;"><?php echo $values["item_quantity"]; ?></td>
                                 <td style="text-align=center;">RM <?php echo $values["item_RM_Price"]; ?></td>
                                 <td style="text-align=center;"><?php echo number_format($values["item_quantity"] * $values["item_RM_Price"], 2); ?></td>
-                                <td style="text-align=center;"> <a href="GU_Menu.php?action=delete&id=<?php echo $values["item_Rest_ID"]; ?>"><span class="text-danger">Delete</span></a></td>
+                                <td style="text-align=center;"> <a href="GU_Menu.php?action=<?php echo $values["item_RM_ID"]; ?>&id=<?php echo $row["Rest_ID"]; ?>"><span class="text-danger">Delete</span></a></td>
                             </tr>
                             <?php
-                                    $total = $total + ($values["item_quantity"] * $values["item_RM_Price"]);
+                                            $total = $total + ($values["item_quantity"] * $values["item_RM_Price"]);
+                                        }
+                                    }
                                 }
-                            }       
+                            }    
                             ?>
                         </table>
 </body>
