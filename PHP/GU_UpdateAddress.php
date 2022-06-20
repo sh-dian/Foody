@@ -10,11 +10,11 @@
 
         if(isset($_POST["Update"])){
 
-            $custState = mysqli_real_escape_string($con, $_POST["custState"]);
-            $custAddress = mysqli_real_escape_string($con, $_POST["custAddress"]);
-            $postCode = mysqli_real_escape_string($con, $_POST["postCode"]);
+            $state = mysqli_real_escape_string($con, $_POST["Cust_State"]);
+            $address = mysqli_real_escape_string($con, $_POST["Cust_Address"]);
+            $postcode = mysqli_real_escape_string($con, $_POST["Cust_Poscode"]);
 
-            $query = "UPDATE customer SET Cust_Address='$custAddress' WHERE Cust_ID = '$id'";
+            $query = "UPDATE customer SET Cust_Address='$address', Cust_Poscode='$postcode', Cust_State='$state' WHERE Cust_ID = '$id'";
 
             $result = mysqli_query($con, $query);
             
@@ -66,17 +66,17 @@
                 
                 <div class="inputBox">
                     <label>State: </label>
-                    <input type="text" id="custState" name="custState" value="<?php echo $row['Cust_State'] ?>"><br><br>
+                    <input type="text" id="Cust_State" name="Cust_State" value="<?php echo $row['Cust_State'] ?>"><br><br>
                 </div>
 
                 <div class="inputBox">
                     <label>Address: </label>
-                    <input type="text" id="custAddress" name="custAddress" value="<?php echo $row['Cust_Address'] ?>"><br><br>
+                    <input type="text" id="Cust_Address" name="Cust_Address" value="<?php echo $row['Cust_Address'] ?>"><br><br>
                 </div>
 
                 <div class="inputBox">
                     <label>PostCode: </label>
-                    <input type="text" id="postCode" name="postCode" value="<?php echo $row['Cust_Poscode'] ?>"><br><br>
+                    <input type="text" id="Cust_Poscode" name="Cust_Poscode" value="<?php echo $row['Cust_Poscode'] ?>"><br><br>
                 </div>
 
             </div>

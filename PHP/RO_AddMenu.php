@@ -8,12 +8,13 @@
     else{
 
       if(isset($_POST["Add_Data"])){
+          $id = mysqli_real_escape_string($con, $_POST["rest_id"]);
           $name = mysqli_real_escape_string($con, $_POST["name"]);
           $price = mysqli_real_escape_string($con, $_POST["price"]);
           $description = mysqli_real_escape_string($con, $_POST["description"]);
     
 
-          $query= "INSERT INTO restaurantmenu(RM_MenuName,RM_Price,RM_Description) VALUES('$name','$price','$description')";
+          $query= "INSERT INTO restaurantmenu(Rest_ID,RM_MenuName,RM_Price,RM_Description) VALUES('$id','$name','$price','$description')" ;
           $result = mysqli_query($con,$query);
 
           if($result){
@@ -53,6 +54,10 @@
         <form action="" method="post">
             <div class="newMenu">
 
+                <div class="inputBox">
+                    <span class="details">Restaurant ID</span>
+                    <input class="input1" type="text" name="rest_id" placeholder="Restaurant ID" required>
+                </div>
                 <div class="inputBox">
                     <span class="details">Food Name</span>
                     <input class="input1" type="text" name="name" placeholder="Enter food name" required>

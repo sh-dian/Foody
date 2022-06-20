@@ -92,7 +92,7 @@
                                             <td style="padding: 0 1rem">'.$phoneNum.'</td>
 
                                             <td style="padding: 0 1rem">
-                                                <button><a href= "GU_Menu.php?viewid='.$ID.'">Explore</a></button>
+                                                <button><a href= "GU_Menu.php?id='.$ID.'">Explore</a></button>
                                                 
                                             </td>
                                         </tr>';

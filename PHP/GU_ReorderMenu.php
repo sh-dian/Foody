@@ -38,7 +38,7 @@
     
     <?php 
                 
-                $query = "SELECT * FROM orderrecord WHERE Order_ID = '1' ";
+                $query = "SELECT * FROM orderrecord WHERE Order_ID = '{$_SESSION["Cust_login"]}' ";
                         $result = mysqli_query($con, $query);
             ?>
 
